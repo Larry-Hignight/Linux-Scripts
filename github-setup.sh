@@ -1,3 +1,7 @@
+# Set the globel user.name and user.email
+git config --global user.name "Larry-Hignight"
+git config --global user.email "larry.hignight@gmail.com"
+
 # Set git to use the credential memory cache
 git config --global credential.helper cache
 
