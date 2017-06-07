@@ -48,6 +48,7 @@ sudo apt-get -y install emacs24
 sudo apt-get -y install git
 sudo apt-get -y install dos2unix
 sudo apt-get -y install meld
+sudo apt-get -y install screen
 #sudo apt-get -y install tilda
 
 
