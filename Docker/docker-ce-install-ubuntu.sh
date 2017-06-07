@@ -10,7 +10,17 @@
 #    Xenial 16.04
 #    Trusty 14.04
 
+# First, check for a 64-bit amd64 system otherwise exit
+ARCH=`uname -i`
+if [ $ARCH <> "amd64" ]
+then
+    echo "Docker Engine cannot run on the following hardware platform:" $ARCH
+    echo "Exiting... "
+    exit
+fi
 
+
+# Setup and install Docker
 sudo apt-get update && sudo apt-get upgrade
 
 echo "=================================="
@@ -42,9 +52,10 @@ echo "=========================================="
 sudo docker run hello-world
 
 
-echo "============================================"
-echo "== Creating docker group for current user =="
-echo "============================================"
+# This has been commented out in case someone doesn't want to create a docker group
+#echo "============================================"
+#echo "== Creating docker group for current user =="
+#echo "============================================"
 
 #sudo groupadd docker
 #sudo usermod -aG docker $USER
