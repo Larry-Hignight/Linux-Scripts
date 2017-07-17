@@ -4,7 +4,6 @@ echo "############################"
 sudo apt-get -y install steam
 sudo apt-get -y install stellarium
 sudo apt-get -y install xubuntu-community-wallpapers
-#sudo apt-get -y install skype       ##follow the unixmen instructions
 
 
 echo "########################"
@@ -12,23 +11,25 @@ echo "## Multimedia Related ##"
 echo "########################"
 sudo apt-get install ubuntu-restricted-extras
 sudo /usr/share/doc/libdvdread4/install-css.sh
-#sudo apt-get -y install w32codecs                # These packages may not be necessary with the newer restricted-extras package
-#sudo apt-get -y install libdvdread4              # Ditto
+
+## These packages may not be necessary with the newer restricted-extras package
+#sudo apt-get -y install w32codecs
+#sudo apt-get -y install libdvdread4
 
 sudo apt-get -y install mediainfo
 sudo apt-get -y install ffmpeg
 sudo apt-get -y install vobcopy
 sudo apt-get -y install vlc
 sudo apt-get -y install xmbc
-sudo apt-get -y install gimp        ## Is this already installed by Ubuntu?
 sudo apt-get -y install openshot
 sudo apt-get -y install handbrake
 sudo apt-get -y install mplayer
 sudo apt-get -y install audacity
 sudo apt-get -y install sound-juicer
 sudo apt-get -y install cdparanoia
+sudo apt-get -y install xloadimage     # xview - cli image viewer
 
-# The latest and greatest version of youtube-dl is available using pip
+# Install youtube-dl using pip
 sudo apt-get -y install python-pip
 pip install --upgrade pip
 pip install --upgrade youtube-dl
@@ -49,7 +50,6 @@ sudo apt-get -y install git
 sudo apt-get -y install dos2unix
 sudo apt-get -y install meld
 sudo apt-get -y install screen
-#sudo apt-get -y install tilda
 
 
 echo "######################"
@@ -58,7 +58,6 @@ echo "######################"
 sudo apt-get -y install openjdk-8-jdk
 sudo apt-get -y install ant
 sudo apt-get -y install maven2
-#sudo apt-get -y install jmeter
 
 
 echo "##################"
