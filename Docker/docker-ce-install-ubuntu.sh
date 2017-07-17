@@ -12,7 +12,7 @@
 
 # First, check for a 64-bit amd64 system otherwise exit
 ARCH=`uname -i`
-if [ $ARCH <> "amd64" ]
+if [ $ARCH != "amd64" ] && [ $ARCH != 'x86_64' ]
 then
     echo "Docker Engine cannot run on the following hardware platform:" $ARCH
     echo "Exiting... "
@@ -52,12 +52,14 @@ echo "=========================================="
 sudo docker run hello-world
 
 
-# This has been commented out in case someone doesn't want to create a docker group
+# -- INTENTIONALLY COMMENTED OUT -- #
+# Run this part if you want to add the current user to the docker group
 #echo "============================================"
 #echo "== Creating docker group for current user =="
 #echo "============================================"
 
-#sudo groupadd docker
 #sudo usermod -aG docker $USER
-
 #docker run hello-world
+
+# IF for some reason the docker group doesn't exist, run the following:
+#sudo groupadd docker
