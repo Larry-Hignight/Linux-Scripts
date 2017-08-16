@@ -35,6 +35,13 @@ pip install --upgrade pip
 pip install --upgrade youtube-dl
 
 
+echo "######################"
+echo "## Database Clients ##"
+echo "######################"
+sudo apt-get -y install postgresql-client
+sudo apt-get -y install mysql-workbench
+
+
 echo "########################"
 echo "## Design / CAD Tools ##"
 echo "########################"
