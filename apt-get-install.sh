@@ -29,9 +29,14 @@ sudo apt-get -y install sound-juicer
 sudo apt-get -y install cdparanoia
 sudo apt-get -y install xloadimage     # xview - cli image viewer
 
-# Install youtube-dl using pip
+# Setup a working Python Env
 sudo apt-get -y install python-pip
+sudo apt-get -y install python3-pip
+sudo apt-get -y install python3-venv
 pip install --upgrade pip
+pip3 install --upgrade pip
+
+# Install youtube-dl using pip
 pip install --upgrade youtube-dl
 
 
