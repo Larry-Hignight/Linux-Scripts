@@ -1,0 +1,7 @@
+https://en.bitcoin.it/wiki/Mining_hardware_comparison
+http://www.datastax.com/dev/blog/simple-data-importing-and-exporting-with-cassandra
+https://cassandra.apache.org/doc/cql3/CQL.html
+http://www.mckinsey.com/insights/media_entertainment/for_daily_fantasy_sports_operators_the_curse_of_too_much_skill
+https://rotogrinders.com/lineup-builder/nhl?site=fanduel
+https://www.fanduel.com/insider/2015/10/05/how-to-approach-fanduel-nhl-gpp-contests/
+https://www.google.com/search?client=ubuntu&channel=fs&q=rotogrinders+nhl+fanduel+%2410+gpp+analysis&ie=utf-8&oe=utf-8
