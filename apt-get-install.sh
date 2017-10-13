@@ -94,10 +94,11 @@ echo "####################"
 echo "##############################"
 echo "## R & RStudio Installation ##"
 echo "##############################"
-sudo apt-get -y install r-base             # Note - I changed this from r-base-core
-sudo apt-get -y install libjpeg62          # Required for RStudio
-sudo apt-get install libcurl4-openssl-dev  # Required for the RCurl package
-sudo apt-get install libxml2-dev           # Required for the XML package
+sudo apt-get -y install r-base                # Note - I changed this from r-base-core; TODO: Review these packages
+sudo apt-get -y install libjpeg62             # Required for RStudio
+sudo apt-get -y install libssl-dev            # Required for the httr and openssl packages
+sudo apt-get -y install libcurl4-openssl-dev  # Required for the RCurl package
+sudo apt-get -y install libxml2-dev           # Required for the XML package
 #wget http://download1.rstudio.org/rstudio-0.99.442-i386.deb
 #sudo dpkg -i rstudio-0.99.442-i386.deb
 #rm rstudio-0.99.442-i386.deb
