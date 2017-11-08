@@ -1,7 +1,7 @@
 CMD="podfox import"
 
 echo "Importing BBC and NPR Radio Shows"
-$CMD http://podcasts.files.bbci.co.uk/b00srz5b.rss               # Mathematics
+$CMD http://podcasts.files.bbci.co.uk/b00srz5b.rss               # Brief History Math
 $CMD http://podcasts.files.bbci.co.uk/p002vsxs.rss               # Business Daily
 $CMD http://feeds.wnyc.org/radiolab                              # Radiolab
 $CMD https://www.sciencefriday.com/feed/podcast/podcast-episode  # Science Friday
@@ -19,3 +19,7 @@ $CMD https://concerning.ai/feed/                                 # Concerning AI
 echo "Importing UAS Related Podcasts"
 $CMD http://theuavdigest.com/feed/podcast/                       # UAV Digest
 $CMD http://www.blogtalkradio.com/suasnews/podcast               # sUAS News
+
+echo "Importing 538 Podcasts"
+$CMD https://www.espn.com/espnradio/feeds/rss/podcast.xml?id=12474672  # 538 The Lab
+$CMD https://www.espn.com/espnradio/feeds/rss/podcast.xml?id=14554755  # 538 Politics
