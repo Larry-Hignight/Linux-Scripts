@@ -40,6 +40,17 @@ pip3 install --upgrade pip
 pip install --upgrade youtube-dl
 
 
+echo "##############################################"
+echo "## SSHFS - Mount remote directories via SSH ##"
+echo "##  https://help.ubuntu.com/community/SSHFS ##"
+echo "##############################################"
+
+# sudo apt-get -y install sshfs
+# sudo gpasswd -a $USER fuse
+# mkdir ~/data
+# sshfs -o idmap=user $USER@remote-host:/remote/data ~/data
+
+
 echo "######################"
 echo "## Database Clients ##"
 echo "######################"
