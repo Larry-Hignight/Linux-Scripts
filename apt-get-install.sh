@@ -29,15 +29,22 @@ sudo apt-get -y install sound-juicer
 sudo apt-get -y install cdparanoia
 sudo apt-get -y install xloadimage     # xview - cli image viewer
 
-# Setup a working Python Env
-sudo apt-get -y install python-pip
+echo "################################"
+echo "## Setup a working Python Env ##"
+echo "################################"
+
 sudo apt-get -y install python3-pip
 sudo apt-get -y install python3-venv
-pip install --upgrade pip
 pip3 install --upgrade pip
 
-# Install youtube-dl using pip
-pip install --upgrade youtube-dl
+
+echo "######################################"
+echo "## Using PIP to install Python apps ##"
+echo "######################################"
+
+# Some apps may need to be install using sudo -H
+pip install --upgrade youtube-dl   # Download streaming videos
+pip install --upgrade podfox       # A command line podcatcher
 
 
 echo "##############################################"
