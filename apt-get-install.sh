@@ -16,18 +16,19 @@ sudo /usr/share/doc/libdvdread4/install-css.sh
 #sudo apt-get -y install w32codecs
 #sudo apt-get -y install libdvdread4
 
-sudo apt-get -y install mediainfo
-sudo apt-get -y install ffmpeg
-sudo apt-get -y install vobcopy
-sudo apt-get -y install vlc
-sudo apt-get -y install xmbc
-sudo apt-get -y install openshot
-sudo apt-get -y install handbrake
-sudo apt-get -y install mplayer
-sudo apt-get -y install audacity
-sudo apt-get -y install sound-juicer
-sudo apt-get -y install cdparanoia
-sudo apt-get -y install xloadimage     # xview - cli image viewer
+sudo apt-get -y install mediainfo      # CLI for general media info (ie bitrate, etc)
+sudo apt-get -y install mp3info        # CLI for MP3 tag info
+sudo apt-get -y install ffmpeg         # Audio and video encoder
+sudo apt-get -y install vobcopy        # DVD copying
+sudo apt-get -y install vlc            # Media player
+sudo apt-get -y install xmbc           # Media player
+sudo apt-get -y install openshot       # Non-Linear video editor
+sudo apt-get -y install handbrake      # Compress DVD files
+sudo apt-get -y install mplayer        # Media player
+sudo apt-get -y install audacity       # Non-Linear sound editor
+sudo apt-get -y install sound-juicer   # Music ripping from CDROM
+sudo apt-get -y install cdparanoia     # Music ripping from CDROM
+sudo apt-get -y install xloadimage     # xview - CLI image viewer
 
 echo "################################"
 echo "## Setup a working Python Env ##"
