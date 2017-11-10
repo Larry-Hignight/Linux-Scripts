@@ -1,0 +1,32 @@
+###################################################################
+# This script is based on the information at the following site:  #
+# https://www.jasonjgw.net/linux-access-overview.html             #
+###################################################################
+
+ 
+# Emacspeak ----------------------------------------------------------------------------
+# Works with several voice synthesizers, two of which are particularly usefull:
+#   espeak - software voice synthesizer available in most distros
+#   DecTalk Express - built-in drivers are included for this hardware
+# https://www.emacswiki.org/emacs/EmacSpeak
+# http://emacspeak.sourceforge.net/install-guide/troubleshooting.html
+sudo apt-get install espeak
+sudo apt-get install emacspeak
+dpkg-reconfigure emacspeak      
+
+
+# YASR (Yet Another Screen Reader) ----------------------------------------------------
+# Instructions:  https://stormdragon.tk/using-speech-dispatcher-with-yasr/
+# Troubleshooting:  https://groups.google.com/forum/#!topic/vinux-development/C94uVfjrE10
+sudo apt-get install speech-dispatcher   # This was already installed
+say-spd "This is only a test"            # Test that speech dispatcher is working
+sudo apt-get install python3-speechd     # Should I have used PIP3 instead?
+sudo apt-get install yasr
+
+# Configure spd-conf
+spd-conf                                 # Simply hit enter every time!
+
+
+# ORCA - Unity Desktop -----------------------------------------------------------------
+# https://help.ubuntu.com/community/Accessibility
+
