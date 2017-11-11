@@ -1,0 +1,383 @@
+------------------------------------------------------------------------
+r25858 | willem | 2011-03-01 10:10:27 +0200 (Tue, 01 Mar 2011) | 8 lines
+
+Added feature to write positions and length
+to a file for later track splitting.
+This is activated with the p key.
+A filename like the one that is being edited with the extention .pos is created
+containing the positions.
+Fixed bug where position was incorrectly reported after a file was inserted.
+
+
+------------------------------------------------------------------------
+r25740 | oguy | 2011-02-22 10:32:55 +0200 (Tue, 22 Feb 2011) | 1 line
+
+review with changelog and tutorial files
+------------------------------------------------------------------------
+r25739 | oguy | 2011-02-22 10:30:16 +0200 (Tue, 22 Feb 2011) | 1 line
+
+restored dae tutorial I had changed
+------------------------------------------------------------------------
+r25738 | oguy | 2011-02-22 10:23:35 +0200 (Tue, 22 Feb 2011) | 1 line
+
+review update
+------------------------------------------------------------------------
+r25672 | willem | 2011-02-11 15:38:51 +0200 (Fri, 11 Feb 2011) | 8 lines
+
+
+Fixed representation of quotes in man page.
+Added instructions to get the installer options to INSTALL.
+Added comment regarding unused rewind code to movearound function.
+Added comment showing the start of main code.
+
+
+
+------------------------------------------------------------------------
+r25625 | willem | 2011-02-09 15:09:29 +0200 (Wed, 09 Feb 2011) | 6 lines
+
+
+Removed a waitfor task from the range check function as it was causing problems
+and was not strictly required.
+Added the description of the l toggle to the man page.
+
+
+------------------------------------------------------------------------
+r25624 | willem | 2011-02-09 13:26:07 +0200 (Wed, 09 Feb 2011) | 5 lines
+
+
+Added the feature to lower playback speed to 70%
+of normal.  This is toggled by pressing the l key.
+
+
+------------------------------------------------------------------------
+r25612 | willem | 2011-02-08 14:54:47 +0200 (Tue, 08 Feb 2011) | 4 lines
+
+
+Changed install.sh to also install COPYING and Changelog
+
+
+------------------------------------------------------------------------
+r25611 | willem | 2011-02-08 14:48:36 +0200 (Tue, 08 Feb 2011) | 6 lines
+
+
+Introduced af function do_command where e.command is called and a check
+is done for errors.  If an error occurs it is shown and
+the program exits.  All other calls to e.command were changed to use do_command.
+
+
+------------------------------------------------------------------------
+r25586 | willem | 2011-02-07 16:02:43 +0200 (Mon, 07 Feb 2011) | 4 lines
+
+
+Replaced the dae-tutorial.ogg with a more compressed version
+
+
+------------------------------------------------------------------------
+r25582 | willem | 2011-02-07 15:34:09 +0200 (Mon, 07 Feb 2011) | 4 lines
+
+Updated man page and added INSTALL file
+Updated user_guide.txt, no replaced by dae.1
+
+
+------------------------------------------------------------------------
+r25581 | willem | 2011-02-07 15:11:59 +0200 (Mon, 07 Feb 2011) | 3 lines
+
+
+Added the man pages for pickafile and dae
+
+------------------------------------------------------------------------
+r25579 | willem | 2011-02-07 13:22:14 +0200 (Mon, 07 Feb 2011) | 4 lines
+
+
+Removed dae.py
+
+
+------------------------------------------------------------------------
+r25578 | willem | 2011-02-07 13:21:09 +0200 (Mon, 07 Feb 2011) | 4 lines
+
+Added install.sh script
+Updated dae to the latest dae.py to prepair for removal of dae.py
+
+
+------------------------------------------------------------------------
+r25577 | willem | 2011-02-07 12:04:18 +0200 (Mon, 07 Feb 2011) | 3 lines
+
+Updated user_guide.txt and README
+
+
+------------------------------------------------------------------------
+r25572 | willem | 2011-02-04 16:19:41 +0200 (Fri, 04 Feb 2011) | 3 lines
+
+Refined rangechecking for moving with nav keys.
+
+
+------------------------------------------------------------------------
+r25556 | willem | 2011-02-04 13:45:34 +0200 (Fri, 04 Feb 2011) | 6 lines
+
+Changed value in sleep in waitfortask from 1 to 0.25 seconds.
+Removing the sleep statement makes a huge difference in performance.
+As the sleep was added to solve some undetectable timeout issue, we compromize whith 0.25.
+
+
+
+------------------------------------------------------------------------
+r25555 | willem | 2011-02-04 11:02:19 +0200 (Fri, 04 Feb 2011) | 6 lines
+
+Fixed bug where audio always played after forward was used,
+irespective if the audio was stopped before forward was pressed.
+Added instructions for building ecasound against installed python
+to user_guide.
+
+
+------------------------------------------------------------------------
+r25550 | willem | 2011-02-03 15:57:01 +0200 (Thu, 03 Feb 2011) | 6 lines
+
+
+Added instructions for building ecasound against the installed python.
+This is to get rid of the python errors produced from python 2.6 onwards.
+
+
+
+------------------------------------------------------------------------
+r25546 | willem | 2011-02-03 14:14:22 +0200 (Thu, 03 Feb 2011) | 6 lines
+
+
+Added copyright line to dae.py
+Fixed a bug where the remove block operation broke when the file being edited
+is not in the current directory.
+
+
+------------------------------------------------------------------------
+r25541 | willem | 2011-02-03 10:36:16 +0200 (Thu, 03 Feb 2011) | 12 lines
+
+
+Fixed a bug where the length of an inserted file was always zero
+in cases where resampling had to take place.
+Removed lots of print statements which were used for debugging.
+Added a dictionary containing descriptions of the keys like play, stop etc.
+Replaced hard-coded descriptions with a print of buttons[key] in 
+function usercontrol where it made sense.
+Changed record realtime function so that it says 'recording' when f2 
+is pressed and no longer 'play'.
+
+
+
+------------------------------------------------------------------------
+r25529 | willem | 2011-02-02 11:21:10 +0200 (Wed, 02 Feb 2011) | 4 lines
+
+
+Replaced hard-coded device names with soundin and soundout variables.
+
+
+------------------------------------------------------------------------
+r25482 | willem | 2011-01-27 14:06:24 +0200 (Thu, 27 Jan 2011) | 4 lines
+
+
+Modified code so that when a non-existant file
+is given as the file to be edited, a one second empty file is created.
+
+------------------------------------------------------------------------
+r25468 | willem | 2011-01-24 14:28:28 +0200 (Mon, 24 Jan 2011) | 4 lines
+
+
+Moved the old perl version and related files
+into the directory historic_perl_version
+
+------------------------------------------------------------------------
+r25461 | willem | 2011-01-21 12:45:03 +0200 (Fri, 21 Jan 2011) | 4 lines
+
+
+Added more treble and did not make it louder (audio tutorial)
+
+
+------------------------------------------------------------------------
+r25453 | oguy | 2011-01-21 08:29:58 +0200 (Fri, 21 Jan 2011) | 1 line
+
+dae review
+------------------------------------------------------------------------
+r25447 | willem | 2011-01-20 17:06:43 +0200 (Thu, 20 Jan 2011) | 4 lines
+
+
+Added audio tutorial
+
+
+------------------------------------------------------------------------
+r25431 | willem | 2011-01-19 12:55:57 +0200 (Wed, 19 Jan 2011) | 3 lines
+
+Added the user guide.
+
+
+------------------------------------------------------------------------
+r25302 | willem | 2010-12-20 13:10:22 +0200 (Mon, 20 Dec 2010) | 7 lines
+
+
+Added check for existance of a file before writing a blok.
+It is removed if it exists, to prevend unexpected results.
+Changed the rewind function so that it jumps 5 seconds at a timne
+No longer calling movearound for rewind for now.
+
+
+------------------------------------------------------------------------
+r25290 | willem | 2010-12-15 10:21:57 +0200 (Wed, 15 Dec 2010) | 3 lines
+
+Added catchkey and pickafile to svn for seperate distribution with DAE
+
+
+------------------------------------------------------------------------
+r22664 | willem | 2010-04-30 13:37:09 +0200 (Fri, 30 Apr 2010) | 3 lines
+
+Fixed bug in the insert of a file.
+
+
+------------------------------------------------------------------------
+r21743 | willem | 2010-02-25 16:19:44 +0200 (Thu, 25 Feb 2010) | 5 lines
+
+
+Changed return position when block is removed
+when position was before the marked block
+
+
+------------------------------------------------------------------------
+r21741 | willem | 2010-02-25 13:24:02 +0200 (Thu, 25 Feb 2010) | 2 lines
+
+Debugging
+
+------------------------------------------------------------------------
+r21739 | willem | 2010-02-25 13:17:18 +0200 (Thu, 25 Feb 2010) | 3 lines
+
+
+added :
+
+------------------------------------------------------------------------
+r21738 | willem | 2010-02-25 13:15:31 +0200 (Thu, 25 Feb 2010) | 3 lines
+
+
+fixed typo
+
+------------------------------------------------------------------------
+r21737 | willem | 2010-02-25 13:11:52 +0200 (Thu, 25 Feb 2010) | 4 lines
+
+
+Changed incorrect position after removal of block
+
+
+------------------------------------------------------------------------
+r21559 | willem | 2010-02-12 13:24:37 +0200 (Fri, 12 Feb 2010) | 4 lines
+
+
+Modified header/script line to call python2.5
+
+
+------------------------------------------------------------------------
+r17002 | willem | 2009-03-06 14:05:54 +0200 (Fri, 06 Mar 2009) | 5 lines
+
+
+Changed position after removed block to
+be at start block.
+
+
+------------------------------------------------------------------------
+r16951 | willem | 2009-03-04 10:35:42 +0200 (Wed, 04 Mar 2009) | 4 lines
+
+
+Changed all references to /dev/dsp to alsa
+
+
+------------------------------------------------------------------------
+r16733 | willem | 2009-02-24 14:50:05 +0200 (Tue, 24 Feb 2009) | 6 lines
+
+
+Fixed bug regarding writing of audio blok to start at the correct place.
+This seem to also have fixed the bug
+ preventing audio to be inserted in the middel of another audio file.
+
+
+------------------------------------------------------------------------
+r13492 | willem | 2008-07-23 17:20:20 +0200 (Wed, 23 Jul 2008) | 3 lines
+
+
+Modified forward and rewind to be toggles and be audable
+
+------------------------------------------------------------------------
+r13422 | willem | 2008-07-14 16:58:16 +0200 (Mon, 14 Jul 2008) | 4 lines
+
+
+latest working version.
+
+
+------------------------------------------------------------------------
+r13360 | willem | 2008-07-09 14:40:20 +0200 (Wed, 09 Jul 2008) | 4 lines
+
+
+DEbugged timeouts during file insert.
+
+
+------------------------------------------------------------------------
+r13112 | willem | 2008-06-23 17:17:46 +0200 (Mon, 23 Jun 2008) | 5 lines
+
+
+Hopefully fixed the bug where the input file's format was always seen as cd format .wav
+Looks like a timing issue.
+
+
+------------------------------------------------------------------------
+r13096 | willem | 2008-06-23 14:51:46 +0200 (Mon, 23 Jun 2008) | 4 lines
+
+Added a 0 in the call to ecasound's lib to get rid
+of the message stating that one can use the python-only module.
+
+
+------------------------------------------------------------------------
+r11105 | willem | 2008-02-05 17:13:52 +0200 (Tue, 05 Feb 2008) | 4 lines
+
+
+Added most functions of the perl version to dae.py.
+
+
+------------------------------------------------------------------------
+r11039 | willem | 2008-01-30 17:12:03 +0200 (Wed, 30 Jan 2008) | 3 lines
+
+Adding the python version of dae, dae.py to svn
+
+
+------------------------------------------------------------------------
+r11038 | willem | 2008-01-30 17:11:08 +0200 (Wed, 30 Jan 2008) | 1 line
+
+
+------------------------------------------------------------------------
+r6136 | willem | 2006-11-22 16:49:30 +0200 (Wed, 22 Nov 2006) | 1 line
+
+
+------------------------------------------------------------------------
+r4034 | willem | 2006-05-02 12:09:18 +0200 (Tue, 02 May 2006) | 3 lines
+
+Corrected forward and rewind missed before
+
+
+------------------------------------------------------------------------
+r4032 | willem | 2006-05-02 11:57:32 +0200 (Tue, 02 May 2006) | 3 lines
+
+Replaced all direct commands with an explicid call to the eci function.
+
+
+------------------------------------------------------------------------
+r3100 | willem | 2006-03-02 16:35:46 +0200 (Thu, 02 Mar 2006) | 3 lines
+
+Added the README file.
+
+
+------------------------------------------------------------------------
+r3096 | willem | 2006-03-02 15:57:29 +0200 (Thu, 02 Mar 2006) | 3 lines
+
+Corrected spelling in audioeditor.txt
+
+
+------------------------------------------------------------------------
+r3076 | willem | 2006-03-02 10:38:33 +0200 (Thu, 02 Mar 2006) | 1 line
+
+
+------------------------------------------------------------------------
+r2793 | tfogwill | 2006-02-21 11:26:38 +0200 (Tue, 21 Feb 2006) | 1 line
+
+initial creation
+------------------------------------------------------------------------

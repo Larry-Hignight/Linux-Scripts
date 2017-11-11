@@ -1,0 +1,227 @@
+#!/bin/bash
+#Released under GNU General Public License version 3, see the file COPYING for details.
+progname=$0
+let rc=0
+o=`getopt -n$progname -o"r:R:m" -- "$@"`||let rc=$?
+if test $rc -ne 0
+then echo "usage: $0 [-r<show-only string>] [-R<hide string>] [-m]  [<command>]"
+     exit $rc
+     fi
+     
+eval set -- "$o"
+restrict=""
+hide=""
+searchmime=""
+
+
+while test "$1" != "--";do
+
+if test "$1" = '-r'
+  then 
+  restrict="$2"
+  shift 2
+  elif test "$1" = '-m'
+  then 
+  searchmime="y"
+  shift 1
+  elif test "$1" = "-R"
+    then hide="$2"
+    shift 2
+    fi
+done  
+shift 1
+test -n "$restrict"&&echo "only showing entries with $restrict"
+test -n "$hide"&&echo "hiding entries with $hide"
+
+runme='enter'
+runwithdir='right'
+#runwithdir is the right arrow
+down='down'
+up='up'
+quit='q'
+search='/'
+findnext='n'
+findprev='N'
+back='left'
+create='c'
+#create is c
+createdir='C'
+info='i'
+
+
+tty=`getterm`
+test ! -d $HOME/.kies&&mkdir $HOME/.kies
+
+let parms=$#
+command=$1
+let vlak=50
+
+function getlist()
+{
+ls | sort > $HOME/.kies/"$tty"pick.txt
+einde=`wc -l $HOME/.kies/"$tty"pick.txt|cut -f1 -d' '`
+if (test $einde -eq 0)
+ then echo -n $PWD" is empty"
+ let einde=1
+fi
+plek=1
+wag='b'
+let passings=0
+let next=1
+}
+function activate() {
+if (test $parms -eq 0)
+  then echo $PWD/$lyn > "$HOME"/.kies/."$tty"file
+else $command "$lyn"
+fi
+}
+
+
+
+getlist
+shown=0
+while (test $plek -le $einde);do
+lyn=`sed -n "$plek"p $HOME/.kies/"$tty"pick.txt`
+if test "$searchmime" = "y"
+ then
+  wysdit=`file -Ni "$lyn"|cut -f2 -d' '|grep -c -i "$restrict"`
+else 
+   wysdit=`echo "$lyn"|grep -c -i "$restrict"`
+   fi
+#echo "wysdit/$wysdit/ restricted /$restrict/ lyn /$lyn/"
+if test $wysdit -eq 1 -o -d "$lyn"
+ then echo -n "$lyn " 
+ test -d "$lyn"&&echo -n " directory "
+ 	wag=`catchkey`
+ 		shown=1
+fi
+ 
+
+
+clear
+if (test "$wag" = "$quit")
+then exit 3
+fi
+
+if (test "$wag" = "$create")
+  then read -p"new name? " lyn
+          activate 
+                  exit
+                  fi
+if (test "$wag" = "$createdir")
+  then read -p"new directory name? " dirname
+          mkdir "$dirname"&&\
+           getlist&&\
+ let plek=`sed -n /$dirname/= $HOME/.kies/"$tty"pick.txt`-1&&echo "plek $plek"||echo "Could not create $dirname"
+                  wag='z'
+                  fi                  
+if (test "$wag" = "$up")
+  then let plek=$plek-2
+  test $plek -lt 0&&let plek=$einde-1
+  fi
+
+if (test "$wag" = "$findnext")
+then 
+    if (test $passings -gt 0)
+        then  
+let next=$next+1
+ if (test $next -gt $passings)
+ then let next=1
+ let plek=1
+   echo -n "wrapping "
+   fi
+   gekry=`echo $ooral|cut -f$next -d' '`
+    while(test $gekry -lt $plek -a $next -lt $passings);do
+     let next=$next+1
+     gekry=`echo $ooral|cut -f$next -d' '`
+    done
+
+    let plek=$gekry-1
+wag='b'
+  else wag=$search
+  fi
+fi
+
+if (test "$wag" = "$findprev")
+then 
+    if (test $passings -gt 0)
+        then  
+let next=$next-1
+ if (test $next -lt 1)
+ then let next=$passings
+   echo -n "wrapping "
+   fi
+   gekry=`echo $ooral|cut -f$next -d' '`
+    let plek=$gekry-1
+wag='b'
+  else wag=$search
+  fi
+  
+fi
+  
+if (test "$wag" = "$search")
+then 
+read -p "search for? " soek
+wag='b'
+ooral=`sed -n /$soek/= $HOME/.kies/"$tty"pick.txt`
+passings=`echo $ooral|wc -w`
+if (test $passings -gt 0)
+    then gekry=`echo $ooral|cut -f$next -d' '`
+    while(test $gekry -lt $plek -a $next -lt $passings);do
+     let next=$next+1
+     gekry=`echo $ooral|cut -f$next -d' '`
+    done
+
+    let plek=$gekry-1
+else echo "$soek not found"
+    let plek=$plek-1
+    fi
+fi
+    
+if (test "$wag" = "$info")
+then file "$lyn"
+  let plek=$plek-1
+ wag="z"
+ fi
+ if (test "$wag" = 'h')
+then echo "help keys"
+ wag="z"
+ fi
+ if (test "$wag" = "$runwithdir")
+   then activate
+     exit
+     fi
+     
+ if (test "$wag" = "$runme")
+ then if (test ! -d "$lyn")
+ then activate
+ exit
+ else echo $lyn is a directory
+   let houplek[$vlak]=$plek
+cd "$lyn"
+let vlak=$vlak+1
+shown=0
+getlist
+ 
+ fi
+fi
+if (test "$wag" = "$back")
+ then cd ..
+   let vlak=$vlak-1
+   getlist
+    let  plek=${houplek[$vlak]}-1
+   test $plek -lt 1&&let plek=0
+   
+   fi
+   
+if test $plek -eq $einde
+then let plek=0
+	if test $shown -eq 0
+			then echo -n "no entries with $restrict in this directory"
+			wag=`catchkey`
+		fi
+	fi
+	
+
+let plek=$plek+1
+done
