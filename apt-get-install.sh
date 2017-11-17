@@ -76,7 +76,7 @@ sudo apt-get -y install openscad
 echo "#######################"
 echo "## Development Tools ##"
 echo "#######################"
-sudo apt-get -y install emacs24
+sudo apt-get -y install emacs25
 sudo apt-get -y install git
 sudo apt-get -y install dos2unix
 sudo apt-get -y install meld

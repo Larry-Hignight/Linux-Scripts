@@ -17,7 +17,7 @@ sudo emacs /etc/modules
 # add the following on a line: speakup_dectlk
 
 
-
+sudo apt-get -y install emacs25
 sudo apt-get -y install zip
 sudo apt-get -y install rar
 sudo apt-get -y install unrar
