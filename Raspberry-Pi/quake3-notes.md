@@ -21,10 +21,10 @@ After the demo is complete, press the ~ again to see the time and FPS results.  
 
 ### Current Results
 
-Wyatt's Computer - 11.4 secs and !113 FPS
-Raspberry Pi 2   - ~16 secs and ~84 FPS (when run from X)
-                 - ~14 secs and ~88 FPS (when run from a terminal w/o X)
-TV-Desktop 17.10 - 25.4 secs and 49.7 FPS (when run at 640x480 w/ X)
+* Wyatt's Computer - 11.4 secs and !113 FPS
+* Raspberry Pi 2   - ~16 secs and ~84 FPS (when run from X)
+*                 - ~14 secs and ~88 FPS (when run from a terminal w/o X)
+* TV-Desktop 17.10 - 25.4 secs and 49.7 FPS (when run at 640x480 w/ X)
                  - Currently unable to start Q3 from a VT
 
 
@@ -33,15 +33,15 @@ TODO
 
 ## Q3 Console Notes
 
-timedemo 0/1 - Enables/Disables the timedemo feature
-demo <demo-name> - runs a demo
-cg_drawFPS 0/1 - Enables/Disables the FPS counter in the top right corner of the screen
+* timedemo 0/1 - Enables/Disables the timedemo feature
+* demo <demo-name> - runs a demo
+* cg_drawFPS 0/1 - Enables/Disables the FPS counter in the top right corner of the screen
 
 ## Useful Links
 
-[General Linux Setup](http://www.andersaaberg.dk/2012/installing-quake-iii-arena-for-linux-especially-x64-bit/)
-[Quake2 Setup](https://github.com/jdolan/quake2)
-[Quake1 Setup](https://ubuntuforums.org/showthread.php?t=537039)
-[Quake3 Dedicated Server - Docker Image](https://hub.docker.com/r/inanimate/quake3/)
-[Debian Quake3 Server Package](https://packages.debian.org/stable/games/quake3-server)
+* [General Linux Setup](http://www.andersaaberg.dk/2012/installing-quake-iii-arena-for-linux-especially-x64-bit/)
+* [Quake2 Setup](https://github.com/jdolan/quake2)
+* [Quake1 Setup](https://ubuntuforums.org/showthread.php?t=537039)
+* [Quake3 Dedicated Server - Docker Image](https://hub.docker.com/r/inanimate/quake3/)
+* [Debian Quake3 Server Package](https://packages.debian.org/stable/games/quake3-server)
 
