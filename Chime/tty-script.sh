@@ -12,21 +12,21 @@ openvt -u -l -f -c 18  #playing videos/music
 openvt -u -l -f -c 23  #playing video streams with xvfb-run
 
 # These TTYs don't have a predefined role
-openvt -u -l -c 7 
-openvt -u -l -c 8
-openvt -u -l -c 9
-openvt -u -l -c 10
-openvt -u -l -c 11
-openvt -u -l -c 12
-openvt -u -l -c 14
-openvt -u -l -c 15
-openvt -u -l -c 16
-openvt -u -l -c 17
-openvt -u -l -c 19
-openvt -u -l -c 20
-openvt -u -l -c 21
-openvt -u -l -c 22
-openvt -u -l -c 24
+openvt -u -l -f -c 7 
+openvt -u -l -f -c 8
+openvt -u -l -f -c 9
+openvt -u -l -f -c 10
+openvt -u -l -f -c 11
+openvt -u -l -f -c 12
+openvt -u -l -f -c 14
+openvt -u -l -f -c 15
+openvt -u -l -f -c 16
+openvt -u -l -f -c 17
+openvt -u -l -f -c 19
+openvt -u -l -f -c 20
+openvt -u -l -f -c 21
+openvt -u -l -f -c 22
+openvt -u -l -f -c 24
 
 
 
