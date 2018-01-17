@@ -1,3 +1,5 @@
+echo "running the inflection script" && echo "root-beer" | sudo -S sh /home/chime/scripts/inflection.sh && echo "successfull"
+
 echo "loading pcspkr module" && sudo modprobe pcspkr && echo "successfull"
 
 echo "setting the font" && setfont /usr/share/consolefonts/Lat15-VGA8.psf.gz && echo "successfull"
