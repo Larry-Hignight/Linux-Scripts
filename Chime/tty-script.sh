@@ -12,7 +12,7 @@ openvt -u -l -f -c 18  #playing videos/music
 openvt -u -l -f -c 23  #playing video streams with xvfb-run
 
 # These TTYs don't have a predefined role
-openvt -u -l -f -c 7 
+openvt -u -l -f -c 7
 openvt -u -l -f -c 8
 openvt -u -l -f -c 9
 openvt -u -l -f -c 10
@@ -30,12 +30,30 @@ openvt -u -l -f -c 24
 
 
 
+echo "Unsetting autologin in all of the TTYs"
+chvt 2 && unset autologout && date && echo "unset autologout on tty 2"
+chvt 4 && unset autologout && cd /home/chime/mp3 && echo "unset autologout on tty 4"
+chvt 5 && unset autologout && w && echo "unset autologout on tty 5"
+chvt 13 && unset autologout && cd /home/chime/videos/tv-news && echo "unset autologout on tty 13"
+chvt 18 && unset autologout && cd videos/music && echo "unset autologout on tty 18"
 
-#chvt 4 && cd mp3
-#chvt 13 && cd videos/tv-news
-#chvt 18 && cd videos/music
-#chvt 1
-
+chvt 3  && unset autologout && echo "unset autologout on tty 3"
+chvt 7  && unset autologout && echo "unset autologout on tty 7"
+chvt 8  && unset autologout && echo "unset autologout on tty 8"
+chvt 9  && unset autologout && echo "unset autologout on tty 9"
+chvt 10 && unset autologout && echo "unset autologout on tty 10"
+chvt 11 && unset autologout && echo "unset autologout on tty 11"
+chvt 12 && unset autologout && echo "unset autologout on tty 12"
+chvt 14 && unset autologout && echo "unset autologout on tty 14"
+chvt 15 && unset autologout && echo "unset autologout on tty 15"
+chvt 16 && unset autologout && echo "unset autologout on tty 16"
+chvt 17 && unset autologout && echo "unset autologout on tty 17"
+chvt 19 && unset autologout && echo "unset autologout on tty 19"
+chvt 20 && unset autologout && echo "unset autologout on tty 20"
+chvt 21 && unset autologout && echo "unset autologout on tty 21"
+chvt 22 && unset autologout && echo "unset autologout on tty 22"
+chvt 24 && unset autologout && echo "unset autologout on tty 24"
+chvt 1  && unset autologout && echo "unset autologout and changed back to tty 1"
 
 
 #vt-log - console error log
