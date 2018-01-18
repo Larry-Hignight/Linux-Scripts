@@ -8,7 +8,7 @@ echo "mounting bell" && sh /home/chime/scripts/mount-bell.sh && echo "successful
 
 echo "opening terminals 2 thru 24" && echo "root-beer" | sudo -S sh /home/chime/scripts/tty-script.sh && echo "successfull"
 
-echo "adding dot to the path - a terrible idea"
-    && set PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:."
+echo "adding home chime scripts to the path"
+    && set PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/chime/scripts"
     && echo "successfull"
     
