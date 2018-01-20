@@ -21,6 +21,8 @@ sudo apt-get -y install mp3info        # CLI for MP3 tag info
 sudo apt-get -y install ffmpeg         # Audio and video encoder
 sudo apt-get -y install vobcopy        # DVD copying
 sudo apt-get -y install vlc            # Media player
+sudo apt-get -y install mpv            # CLI video player
+sudo apt-get -y install xvfb           # CLI video player via frame buffer
 sudo apt-get -y install xmbc           # Media player
 sudo apt-get -y install openshot       # Non-Linear video editor
 sudo apt-get -y install handbrake      # Compress DVD files
