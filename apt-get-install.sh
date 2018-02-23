@@ -6,9 +6,34 @@ sudo apt-get -y install stellarium
 sudo apt-get -y install xubuntu-community-wallpapers
 
 
-echo "########################"
-echo "## Multimedia Related ##"
-echo "########################"
+echo "#######################"
+echo "## Multimedia - Main ##"
+echo "#######################"
+sudo apt-get -y install ffmpeg         # Audio and video encoder
+sudo apt-get -y install vlc            # Media player
+sudo apt-get -y install mpv            # CLI video player
+sudo apt-get -y install xvfb           # CLI video player via frame buffer
+sudo apt-get -y install openshot       # Non-Linear video editor
+sudo apt-get -y install handbrake      # Compress DVD files
+sudo apt-get -y install audacity       # Non-Linear sound editor
+sudo apt-get -y install xloadimage     # xview - CLI image viewer
+
+
+echo "###########################"
+echo "## Multimedia Additional ##"
+echo "###########################"
+sudo apt-get -y install mediainfo      # CLI for general media info (ie bitrate, etc)
+sudo apt-get -y install mp3info        # CLI for MP3 tag info
+sudo apt-get -y install vobcopy        # DVD copying
+sudo apt-get -y install xmbc           # Media player
+sudo apt-get -y install mplayer        # Media player
+sudo apt-get -y install sound-juicer   # Music ripping from CDROM
+sudo apt-get -y install cdparanoia     # Music ripping from CDROM
+
+
+echo "###########################"
+echo "## Multimedia Restricted ##"
+echo "###########################"
 sudo apt-get install ubuntu-restricted-extras
 sudo /usr/share/doc/libdvdread4/install-css.sh
 
@@ -16,21 +41,6 @@ sudo /usr/share/doc/libdvdread4/install-css.sh
 #sudo apt-get -y install w32codecs
 #sudo apt-get -y install libdvdread4
 
-sudo apt-get -y install mediainfo      # CLI for general media info (ie bitrate, etc)
-sudo apt-get -y install mp3info        # CLI for MP3 tag info
-sudo apt-get -y install ffmpeg         # Audio and video encoder
-sudo apt-get -y install vobcopy        # DVD copying
-sudo apt-get -y install vlc            # Media player
-sudo apt-get -y install mpv            # CLI video player
-sudo apt-get -y install xvfb           # CLI video player via frame buffer
-sudo apt-get -y install xmbc           # Media player
-sudo apt-get -y install openshot       # Non-Linear video editor
-sudo apt-get -y install handbrake      # Compress DVD files
-sudo apt-get -y install mplayer        # Media player
-sudo apt-get -y install audacity       # Non-Linear sound editor
-sudo apt-get -y install sound-juicer   # Music ripping from CDROM
-sudo apt-get -y install cdparanoia     # Music ripping from CDROM
-sudo apt-get -y install xloadimage     # xview - CLI image viewer
 
 echo "################################"
 echo "## Setup a working Python Env ##"
@@ -88,7 +98,7 @@ sudo apt-get -y install screen
 echo "######################"
 echo "## Java programming ##"
 echo "######################"
-sudo apt-get -y install openjdk-8-jdk
+sudo apt-get -y install openjdk-9-jdk
 sudo apt-get -y install ant
 sudo apt-get -y install maven2
 
@@ -120,9 +130,10 @@ sudo apt-get -y install libjpeg62             # Required for RStudio
 sudo apt-get -y install libssl-dev            # Required for the httr and openssl packages
 sudo apt-get -y install libcurl4-openssl-dev  # Required for the RCurl package
 sudo apt-get -y install libxml2-dev           # Required for the XML package
-#wget http://download1.rstudio.org/rstudio-0.99.442-i386.deb
-#sudo dpkg -i rstudio-0.99.442-i386.deb
-#rm rstudio-0.99.442-i386.deb
+
+wget https://download1.rstudio.org/rstudio-xenial-1.1.423-amd64.deb
+sudo dpkg -i rstudio-xenial-1.1.423-amd64.deb
+rm rstudio-xenial-1.1.423-amd64.deb
 
 
 echo "######################################"
@@ -199,6 +210,13 @@ sudo apt-get -y install fraqtive         # Mandlebrot and Julia set viewer
 #sudo apt-get -y install amoeba       # OpenGL video rendering (It's just OK)
 
 
+#echo "##########################"
+#echo "## Virtualization tools ##"
+#echo "##########################"
+#sudo apt-get -y install virtualbox-qt
+#sudo apt-get -y install vagrant
+
+
 ## Chrome - not available via apt-get / Note - the 32 bit version is no longer being maintained
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -224,35 +242,9 @@ sudo apt-get -y install fraqtive         # Mandlebrot and Julia set viewer
 #sudo dpkg -i google-earth-stable*.deb
 #sudo apt-get -f install
 
-
-## Networking / Security
+# Networking / Security
 #sudo apt-get -y install aircrack-ng john #kismet  ##kismet requires setuid root?!
 #wget ftp://mirrors.kernel.org/openwall/wordlists/languages/English/3-large/lower.gz
 #wget ftp://mirrors.kernel.org/openwall/wordlists/languages/Spanish/lower.gz
 #wget ftp://mirrors.kernel.org/openwall/wordlists/languages/French/lower.gz
 #wget ftp://mirrors.kernel.org/openwall/wordlists/languages/French/mixed.gz
-
-
-##########################################################
-## THIS ENTIRE SECTION CAN/SHOULD BE REPLACED BY DOCKER ##
-##########################################################
-
-#echo "##############"
-#echo "## Services ##"
-#echo "##############"
-#sudo apt-get -y install tomcat7
-#sudo apt-get -y install zookeeper
-#wget http://mirrors.advancedhosters.com/apache/activemq/5.10.0/apache-activemq-5.10.0-bin.tar.gz
-
-#echo "##########################"
-#echo "## Virtualization tools ##"
-#echo "##########################"
-#sudo apt-get -y install virtualbox-qt
-#sudo apt-get -y install vagrant
-
-## Cassandra - http://docs.datastax.com/en/cassandra/2.2/cassandra/install/installDeb.html
-#echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
-#curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
-#sudo apt-get update
-#sudo apt-get install dsc22
-#sudo apt-get install cassandra-tools
