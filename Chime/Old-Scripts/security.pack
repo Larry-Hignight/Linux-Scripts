@@ -1,0 +1,42 @@
+
+#  ****************Start of Security pack********************
+
+#  $Id: security.pack,v 1.2 2009/12/27 20:03:42 dallas Exp dallas $
+
+
+
+
+# trap ""  2 3
+# 
+# #     This was suggested by a note in Linux Journal
+# #     to make it harder to stop the execution of this script
+# #     trap  =  internal shell command to set response to signals
+# #     "..." =  'double quoted' string literal, contains commands to run
+# #     2 3   =  SIGINT SIGQUIT  signals, run kill -l for complete list
+
+
+PATH='/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/sbin:/usr/local/bin:/usr/games:~/bin'  ;
+
+# for root: PATH='/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin'  ;
+
+
+hash -r  ;
+#  -  Bash Cookbook, 1st ed.,, #14.5
+
+ulimit  -H -c 0 --  ;
+#  -  Bash Cookbook, 1st ed.,, #14.6
+
+IFS=$' \t\n'  ;
+#  -  Bash Cookbook, 1st ed.,, #14.7
+
+UMASK='002'  ;
+umask  $UMASK  ;
+#  -  Bash Cookbook, 1st ed.,, #14.8
+
+\unalias -a  
+#  -  Bash Cookbook, 1st ed.,, #14.4
+
+
+#   shopt -s expand_aliases
+
+#  ****************End of Security pack********************

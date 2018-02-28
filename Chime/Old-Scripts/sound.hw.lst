@@ -1,0 +1,21 @@
+12: PCI 1b.0: 0403 Audio device
+  [Created at pci.318]
+  Unique ID: u1Nb.NJUir9jiH51
+  SysFS ID: /devices/pci0000:00/0000:00:1b.0
+  SysFS BusID: 0000:00:1b.0
+  Hardware Class: sound
+  Model: "Intel 82801G (ICH7 Family) High Definition Audio Controller"
+  Vendor: pci 0x8086 "Intel Corporation"
+  Device: pci 0x27d8 "82801G (ICH7 Family) High Definition Audio Controller"
+  SubVendor: pci 0x1458 "Giga-byte Technology"
+  SubDevice: pci 0xa002 
+  Revision: 0x01
+  Driver: "HDA Intel"
+  Driver Modules: "snd_hda_intel"
+  Memory Range: 0xfdff8000-0xfdffbfff (rw,non-prefetchable)
+  IRQ: 16 (404020 events)
+  Module Alias: "pci:v00008086d000027D8sv00001458sd0000A002bc04sc03i00"
+  Driver Info #0:
+    Driver Status: snd_hda_intel is active
+    Driver Activation Cmd: "modprobe snd_hda_intel"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown

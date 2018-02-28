@@ -1,0 +1,7 @@
+#!/bin/sh
+# run trn
+/usr/bin/trn -J10 -G -x0sml "-X1XD" -Ots -e -M +m -t -h +hfrom +Hnewsgr "$@"
+# move any clarinet.* groups to .newsrc.clari
+mv-clari
+# re-sort the .newsrc file
+sortrc

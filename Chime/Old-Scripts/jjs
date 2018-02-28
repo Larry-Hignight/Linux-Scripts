@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# When ls has no arguments or if the argument is a directory, produce
+# a single column and sort directories before files before links
+# before others somewhat like in DOS. Otherwise use the default ls. -a
+# can precede the (possibly null) path name to get all files.
+
+if [ -n "$1" ] ; then # Sometimes "--color=tty" is inserted by an alias
+    if [ "`echo "$1" | cut -b-8`" = "--color=" ]; then
+	shift # Get rid of it
+    fi
+    if [ "$1" = "-a" ]; then # Use my neat format for ls -a
+	shopt -sq dotglob # .filenames will be included in *
+	if [ $? -eq 0 ]; then # If it worked
+	    shift # $1, if any, is the item(s) to list
+	fi # This shopt may not work on old bashes and no way to suppress error msg
+    fi
+fi
+
+if [ -n "$1" ]; then # $1 is still not null
+    if [ ! -d "$1" ]; then # Not a directory; use default ls
+	/bin/ls "$@" # Preserve everything when options given to ls
+	exit
+    elif [ $# -gt 1 ]; then # More than one directory
+	/bin/ls "$@"
+	exit
+    else
+	cd "$1" > /dev/null 2>&1 # A directory name given to ls
+	if [ $? -ne 0 ]; then
+	    echo "Access denied" >&2
+	    exit 2
+	fi
+    fi # Process termination will pop the directory
+fi
+
+: ${TMPDIR:="$HOME"} # Should work on both Linux and Solaris
+for i in *; do # List all files in this directory
+    if [ "$i" = "*" ]; then
+	echo "No files in $PWD" >&2
+	exit 1 # Guard against an empty directory where * means "*"
+    elif [ -h "$i" ]; then # Symbolic links sort nearly last
+	printf "3l " >> "$TMPDIR/$$lstemp"
+    elif [ -d "$i" ]; then # Directories sort first, excluding links to dirs
+	printf "1/ " >> "$TMPDIR/$$lstemp"
+    elif [ -f "$i" ]; then # Regular files second
+	printf "2f " >> "$TMPDIR/$$lstemp"
+    else # Unknowns go last
+	printf "4? " >> "$TMPDIR/$$lstemp"
+    fi
+    echo "$i" >> "$TMPDIR/$$lstemp" # Add filename and <cr>
+done
+cd $TMPDIR # Do everything from temp dir now
+sort "$$lstemp" | cut -b2- > "$$lstemp1" # Cut sort char but not type ID
+LSLINES=`wc -l < "$$lstemp"` # Count lines because names can have spaces
+LINES=`tput lines` # Number of screen lines
+if [ $LSLINES -lt $LINES ]; then # Whole list fits on one screen
+    if [ -t 1 ]; then # If stdout is the terminal
+	clear # I can always start at top of screen
+    fi # Don't clear if talking to Less; puts escape sequence at top of list
+    cat "$$lstemp1"
+else
+    less < "$$lstemp1"
+fi
+rm -f $$lstemp*

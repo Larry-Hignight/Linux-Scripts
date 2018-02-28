@@ -1,0 +1,9 @@
+libsox-fmt-all:i386
+libsox-fmt-alsa:i386
+libsox-fmt-ao:i386
+libsox-fmt-base:i386
+libsox-fmt-mp3:i386
+libsox-fmt-oss:i386
+libsox-fmt-pulse:i386
+libsox2:i386
+sox

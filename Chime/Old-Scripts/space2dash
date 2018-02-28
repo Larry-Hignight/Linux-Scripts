@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+
+shopt -s dotglob
+shopt -s extglob
+#  shopt -u failglob
+shopt -s globstar
+#  shopt -u nocaseglob
+#  shopt -u nullglob
+
+#  echo  "s/ /${1:--}/g"    ;   exit  ;
+
+for i in   ** 
+do
+rename -v   "s/ /${1:--}/g;s/'//g"    "${i}"     ;
+done

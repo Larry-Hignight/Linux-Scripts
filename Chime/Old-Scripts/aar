@@ -1,0 +1,210 @@
+#!/usr/bin/env  bash
+
+
+VERSION='$Id: aar,v 1.3 2011/08/13 01:55:14 dallas Exp dallas $'  ;
+USAGE="${0##*/}  [ -h | -v ]  [-d] -i  |  file 'command... URL|MRL ....'  "  ;
+
+#   source ~/bin/security.pack  ;
+
+#  ****************Start of Security pack********************
+
+#  $Id: aar,v 1.3 2011/08/13 01:55:14 dallas Exp dallas $
+
+
+
+
+# trap ""  2 3
+# 
+# #     This was suggested by a note in Linux Journal
+# #     to make it harder to stop the execution of this script
+# #     trap  =  internal shell command to set response to signals
+# #     "..." =  'double quoted' string literal, contains commands to run
+# #     2 3   =  SIGINT SIGQUIT  signals, run kill -l for complete list
+
+
+PATH='/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/sbin:/usr/local/bin:/usr/games:~/bin'  ;
+
+# for root: PATH='/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin'  ;
+
+
+hash -r  ;
+#  -  Bash Cookbook, 1st ed.,, #14.5
+
+ulimit  -H -c 0 --  ;
+#  -  Bash Cookbook, 1st ed.,, #14.6
+
+IFS=$' \t\n'  ;
+#  -  Bash Cookbook, 1st ed.,, #14.7
+
+UMASK='002'  ;
+umask  $UMASK  ;
+#  -  Bash Cookbook, 1st ed.,, #14.8
+
+\unalias -a  
+#  -  Bash Cookbook, 1st ed.,, #14.4
+
+
+#   shopt -s expand_aliases
+
+#  ****************End of Security pack********************
+
+shopt -s expand_aliases
+
+# Help subsystem #######################################
+
+function help_message ()
+{
+  cat <<HELP_MESSAGE  ;
+
+  ${USAGE}
+
+  -i                Interactive input switch
+  file              MP3 file that is recording of soundcard activity
+  command           command that typically generates sound
+                      using the URL or MRL
+  -h                Help
+  -v                Version
+  -d                Debug
+
+HELP_MESSAGE
+
+  exit  ;
+} ;
+
+INTERACTIVE=0  ;
+
+case  ${1}  in
+
+[-/][hH?]* | --[hH]* )
+  help_message  ;
+  ;;
+
+[-/][vV]* | --[vV]* )
+  echo ${VERSION#\$Id\: }  ;
+  exit  ;
+  ;;
+
+[-/][dD]* | --[dD]* )
+  SCRIPTDEBUG='1'  ;
+  shift  1  ;
+  ;;
+
+[-/][iI]* | --[iI]* )
+  INTERACTIVE='1'  ;
+  shift  1  ;
+  ;;
+
+
+*@* )
+  :  ;
+  ;;
+
+* )
+  : help_message
+  ;;
+
+esac  ;
+
+#  Initializations ####################################################
+
+if [ 0 -eq ${INTERACTIVE:=0} ]
+then
+  FILE="${1%.[Mm][Pp]3}.mp3"  ;
+  shift  1   ;
+else
+  read  -p  'File to store soundcard audio in: '       FILE  ;
+  FILE="${FILE%.[Mm][Pp]3}.mp3"  ;
+fi  ;
+
+[ -e ${FILE} ] &&  {  echo "File ${FILE} already exists" ;  exit ; }  ;
+
+
+THECMD=''   ;
+if [ 1 -eq ${INTERACTIVE:=0} ]
+then
+  read  -p  'Command to run: '  THECMD  ;
+fi  ;
+
+#   echo test  ; exit  ;
+
+
+if  [  -z ${1:-''} ]  &&  [  -z  ${THECMD} ]
+then 
+  echo 'No command given, exiting.'  ;
+  exit  ;
+fi  ;
+
+#  echo 'passed test'  ;  exit  ;
+
+
+if   [ -e ~/.asoundrc ]           
+then
+  echo 'Alsa config file ~/.asoundrc already exists - recording in progress?' ;
+  exit  ;
+fi  ;
+
+cat > ~/.asoundrc    <<CONFIGURATION
+
+#   ~/.asoundrc alsa configuration file  to record all soundcard activity to
+#          output.mp3,  whether driver supports 
+#          mixer settings to activate recording from the mixer/dsp
+#          with arecord or not.
+#          Courtesy of Tony Boechler & person behind
+#          
+#          http://www.linuxquestions.org/questions/linux-general-1/how-to-
+#          record-alsa-mixed-output-similar-to-whatuhear-475801/
+#
+#          2011 Aug 03  Dallas E. Legan II
+
+pcm.intermediate {
+     type hw
+     card Intel
+     device 0
+     subdevice 0
+     #  last 3 lines here and next stanza 
+     #     need adjustment to your default device
+     #     as displayed by aplay -L output
+}
+
+ctl.intermediate {
+     type hw
+     card Intel
+     device 0
+     subdevice 0
+}
+
+pcm.save {
+    type file
+    format wav
+    slave.pcm intermediate
+    #   file '| lame --quiet  -q 2 -V 4 - output.mp3'
+    file '| lame --quiet  -q 2 -V 4 - ${FILE}'
+    #   alternatively:
+    #    file output.wav
+}
+
+#  make this the default, while this file is installed:
+pcm.!default   save
+
+CONFIGURATION
+
+# End of Initializations #######################################
+
+#  Aliases / Functions  ##########################################
+function  wrapup  ()
+{
+rm  -f  ~/.asoundrc       ;
+sudo  /usr/sbin/alsa  force-reload  ;
+}
+
+alias rp="xvfb-run -a  -s '-screen 0 1024x768x16'  /opt/real/RealPlayer/realplay "
+alias ff="xvfb-run -a  -s '-screen 0 640x480x16'  firefox -no-remote -a nullvideo -P nullvideo "
+
+#  End Aliases / Functions  ##########################################
+
+
+#  trap   'rm  -f  ~/.asoundrc'    EXIT   ;
+trap   'wrapup'    EXIT   ;
+
+#   "${@}"  ${THECMD:=''};  
+eval  "${@:=${THECMD}}"   ;

@@ -1,0 +1,26 @@
+
+
+
+pcm.intermediate {
+     type hw
+     card Intel
+     device 0
+     subdevice 0
+}
+
+ctl.intermediate {
+     type hw
+     card Intel
+     device 0
+     subdevice 0
+}
+
+pcm.save {
+    type file
+    format wav
+    slave.pcm intermediate
+    file '| lame --quiet  -q 2 -V 4 - output.mp3'
+    #    file output.wav
+}
+
+pcm.!default   save

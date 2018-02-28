@@ -1,0 +1,177 @@
+#!/usr/bin/env  bash
+
+
+
+VERSION='$Id: strm2mp3,v 1.2 2014/09/11 06:41:17 dallas Exp dallas $'  ;
+USAGE="${0##*/}  [ -h | -v ]  [-d]  <URL> <file>"  ;
+
+#  renice   +86   ${$}  ;
+
+source ~/bin/security.pack  ;
+
+
+
+# Help subsystem #######################################
+
+function help_message ()
+{
+  cat <<HELP_MESSAGE  ;
+
+  ${USAGE}
+
+  Note:             Ignore all square or angle brackets, braces,
+                      less or greater than or pipe symbols in the
+                      USAGE schematic for actually using this command.
+  -h                Help
+  -v                Version
+  -d                Debug
+  URL               One way or the other this must be a URL.
+                      Type it in, paste it in, or  use backquotes
+                      around cat or equivalet command of a url of 1 line
+                      in a file to dynamicly insert it into your command line.
+  FILE              This must be the file you want to record the stream
+                      into using mp3 encoding.
+
+HELP_MESSAGE
+
+  exit  ;
+} ;
+
+function  help_check  ()
+{
+
+[ -f "${1}" ]  &&  return  ;
+#             - continue, return to execution if $1 is a file
+
+
+case  ${1}  in
+
+[-/][hH?]* | --[hH]* )
+  help_message  ;
+  ;;
+
+[-/][vV]* | --[vV]* )
+  echo ${VERSION#\$Id\: }  ;
+  exit  ;
+  ;;
+
+[-/][dD]* | --[dD]* )
+  SCRIPTDEBUG='1'  ;
+  shopt -s extdebug  ;
+  shift  1  ;
+  ;;
+
+
+*@* )
+  :  ;
+  ;;
+
+* )
+  : help_message
+  ;;
+
+esac  ;
+
+}  
+
+help_check   "${1}"  ;
+
+
+##  Process  Parameters  #######################################3
+
+
+while getopts ':ip:'  SWITCHES
+do
+  # leading  ':' or OPTERR=0 turns off weird error message
+  #  for invalid options
+
+#       TODO:   '--'  end of switches
+
+  case  "${SWITCHES}"  in
+  \? ) echo ${USAGE} ; 
+      exit    ;
+      ;;
+#    p ) MPARMS="${OPTARG}"  ;
+#        MPARMS="${MPARMS#=}"  ;
+#        #  echo "case: ${OPTARG}"  ;
+#        ;;
+  * )   :  ;
+      ;;
+  esac
+done
+
+shift  $(( ${OPTIND}  -  1 ))
+#  --  a piece of boilerplate to sweep options out of the way
+#      typically leaving file names
+
+
+##  Globals, Aliases, Functions  etc. #############################
+
+function  d2x  ()
+{
+  RESULT=$( bc <<< "ibase=10;obase=16;${1}"    \
+      |  tr '[:upper:]'  '[:lower:]'   )  ; 
+}
+
+function  right  ()
+{
+  RESULT="${1}"  ;
+  LENGTH="${2}"  ;
+  PAD="${3:-' '}"  ;
+  while  (( ${#RESULT} < LENGTH ))
+  do
+    RESULT="${PAD}${RESULT}"  ;
+  done  ;
+}
+
+
+#  shopt -s expand_aliases   ;
+
+#  real, old:
+#  UA='Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)'
+#  current, real:
+#  UA='Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1092.0 Safari/536.6'
+#  unreal:
+#  UA='Mozilla/9.0 (Windows NT 9.1; WOW64) AppleWebKit/936.6 (KHTML, like Gecko) Chrome/21.0.1092.0 Safari/936.6'
+
+
+##  MAIN BODY  #################################################
+
+
+
+
+if  [[  -e   "${2}" ]]
+  then
+  echo  "File ${2} seems to already exist."
+  echo  "Either choose another name, or delete it and try again."
+  exit  ;
+  fi  ;
+
+
+
+
+
+
+
+YOURFIFO="/tmp/${RANDOM}.fifo"  ;
+while    [ -e "${YOURFIFO}" ]
+do
+  YOURFIFO="/tmp/${RANDOM}.fifo"  ;
+done  ;
+
+
+mkfifo "${YOURFIFO}"  ;
+
+#  ( lame --quiet  -q 2 -V 4 "${YOURFIFO}" "${2}" ; rm -f  "${YOURFIFO}" )  &
+
+#    ( sox -q "${YOURFIFO}"   -t wavpcm  -s -  | \
+
+( sox -q "${YOURFIFO}"   -t wavpcm  -e signed-integer -  | \
+   lame --quiet  -q 2 -V 4 - "${2}" ; rm -f  "${YOURFIFO}" )  &
+
+#  mpv  --msg-level=all=v   --demuxer=rawaudio   --ao=pcm:file=roses.wav
+
+# mplayer -nocache  -ao pcm:fast:file="${YOURFIFO}" -vc null -vo null  "${1}"  ;
+
+mpv  --no-cache   --no-video  --ao=pcm:waveheader:file="${YOURFIFO}"   \
+             "${1}"  ;
