@@ -25,7 +25,6 @@ apt-get -y install unrar
 apt-get -y install ncftp
 apt-get -y install tcsh
 apt-get -y install yash
-apt-get -y install emacs-nox
 apt-get -y install git
 apt-get -y install dos2unix
 apt-get -y install lynx

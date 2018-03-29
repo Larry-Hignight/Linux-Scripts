@@ -26,7 +26,6 @@ sudo apt-get -y install unrar
 
 sudo apt-get -y install tcsh
 sudo apt-get -y install yash
-sudo apt-get -y install emacs-nox
 sudo apt-get -y install git
 sudo apt-get -y install dos2unix
 sudo apt-get -y install lynx
