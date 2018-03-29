@@ -62,7 +62,7 @@ alsamixer
 
 
 ## Mount bell on chime using sshfs
-apt-get install sshfs
+apt-get install -y sshfs
 # For some reason, I couldn't add chime to the fuse group (ie fuse didn't exist)
 # gpasswd -a $USER fuse
 
