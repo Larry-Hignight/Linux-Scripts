@@ -16,7 +16,7 @@ sudo modprobe speakup_dectlk
 sudo emacs /etc/modules
 # add the following on a line: speakup_dectlk
 
-
+sudo apt-get -y install ncftp
 sudo apt-get -y install zip
 sudo apt-get -y install rar
 sudo apt-get -y install unrar
