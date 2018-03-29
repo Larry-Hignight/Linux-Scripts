@@ -63,8 +63,6 @@ alsamixer
 sudo apt-get install sshfs
 # For some reason, I couldn't add chime to the fuse group (ie fuse didn't exist)
 # sudo gpasswd -a $USER fuse
-mkdir -p /home/chime/bell-data
-sshfs -o idmap=user chime@192.168.0.6:/mnt/data/home/chime /home/chime/bell-data
 
 
 ## These packages were missing in the Ubuntu repositories
