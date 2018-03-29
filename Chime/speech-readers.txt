@@ -3,7 +3,7 @@
 # https://www.jasonjgw.net/linux-access-overview.html             #
 ###################################################################
 
- 
+
 # Emacspeak ----------------------------------------------------------------------------
 # Works with several voice synthesizers, two of which are particularly usefull:
 #   espeak - software voice synthesizer available in most distros
@@ -12,7 +12,7 @@
 # http://emacspeak.sourceforge.net/install-guide/troubleshooting.html
 sudo apt-get install espeak
 sudo apt-get install emacspeak
-dpkg-reconfigure emacspeak      
+dpkg-reconfigure emacspeak
 
 
 # YASR (Yet Another Screen Reader) ----------------------------------------------------
@@ -29,4 +29,3 @@ spd-conf                                 # Simply hit enter every time!
 
 # ORCA - Unity Desktop -----------------------------------------------------------------
 # https://help.ubuntu.com/community/Accessibility
-

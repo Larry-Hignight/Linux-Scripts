@@ -47,9 +47,9 @@ apt-get -y install beep
 
 apt-get -y install ffmpeg   # Already installed; Must to use it... =\
 
-# apt-get install python3      # This was already installed on the system 
-apt-get -y install python3-pip     
-pip3 install --upgrade pip 
+# apt-get install python3      # This was already installed on the system
+apt-get -y install python3-pip
+pip3 install --upgrade pip
 pip3 install --upgrade youtube-dl
 pip3 install --upgrade httpie
 

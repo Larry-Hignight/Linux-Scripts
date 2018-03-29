@@ -16,7 +16,7 @@ endif
 unset autologout
 alias ls "ls -1"
 alias frm	'frm|sort'
-alias fftp   '/usr/bin/ftp -i' 
+alias fftp   '/usr/bin/ftp -i'
 alias ftp	$HOME/bin/ftp
 alias kwota   '$home/bin/kwota'
 alias lynx	'lynx -show_cursor -cfg ~/usr/bin/lynx.cfg'
@@ -39,7 +39,7 @@ alias rp "xvfb-run -a -s '-screen 0 1024x768x16' /opt/real/RealPlayer/realplay "
 alias df 'df  -h '
 alias start-privoxy 'sudo /etc/init.d/privoxy restart'
 #alias reload-dectalk modprobe -r speakup_dectlk: modprobe dectlk
-# alias smpdectlk='/usr/bin/sudo /sbin/modprobe ' 
+# alias smpdectlk='/usr/bin/sudo /sbin/modprobe '
 #  smpdectlk = Sudo ModProbe  4 dectlk
 # alias reload-dectalk 'smpdectlk -r speakup_dectlk; smpdectlk speakup_dectlk '
 alias reload-dectalk '/usr/bin/sudo /sbin/modprobe  -r speakup_dectlk; /usr/bin/sudo /sbin/modprobe  speakup_dectlk '
@@ -47,4 +47,3 @@ alias rd '/usr/bin/sudo /sbin/modprobe  -r speakup_dectlk; /usr/bin/sudo /sbin/m
 alias ls 'ls -1'
 alias type 'less'
 #alias date +'%A %B %d %r %Z %Y'
-

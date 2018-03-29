@@ -11,4 +11,3 @@ echo "opening terminals 2 thru 24" && echo "root-beer" | sudo -S sh /home/chime/
 echo "adding home chime scripts to the path"
     && set PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/chime/scripts"
     && echo "successfull"
-    
