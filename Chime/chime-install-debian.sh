@@ -1,4 +1,5 @@
-apt-get install emacs25-nox
+## Install Emacs
+apt-get -y install emacs25-nox
 
 ## Change the PS1 prompt
 PS1="chime$ "
