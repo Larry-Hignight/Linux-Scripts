@@ -1,3 +1,10 @@
+mkdir -p /home/chime/chime-backup
+mkdir -p /home/chime/jfk
+mkdir -p /home/chime/mp3
+mkdir -p /home/chime/radio-streams
+mkdir -p /home/chime/uncategorized
+mkdir -p /home/chime/videos
+
 sshfs -o idmap=user chime@192.168.0.6:/mnt/data/home/chime/chime-backup   /home/chime/chime-backup
 sshfs -o idmap=user chime@192.168.0.6:/mnt/data/home/chime/jfk            /home/chime/jfk
 sshfs -o idmap=user chime@192.168.0.6:/mnt/data/home/chime/mp3            /home/chime/mp3
