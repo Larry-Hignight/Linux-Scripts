@@ -1,0 +1,44 @@
+==== Chime (desktop) ===
+Task										Status / Time Estimate
+Install Debian 9								Finished
+Install software								Finished
+Install Docker									Finished
+Configure tcsh									30 minutes
+Configure aliases								30 minutes
+Configure scripts in /usr/local							30 minutes
+Attempt to recover deleted files 						3 hours
+Setup multiple sound cards 							3 hours
+Update and/or Dockerize Dallas scripts 						6 hours (this is just a wild ass guess)
+Switch from GRUB to LILO       							2 hours
+Install Vinux as a 2nd backup distro						2 hours
+Install Voxin  									Note - I don't know why I had this on the list
+
+
+=== Dance (laptop) ===
+Task										Time Estimate
+Install Debian 9 								Finished
+Install software								Finished
+Install Docker									Finished
+Configure tcsh									30 minutes
+Configure aliases								30 minutes
+Configure scripts in usr/local							30 minutes
+Install Voxin  									In Progress
+
+
+=== MISC ITEMS ===
+Task										Time Estimate
+Purchase shelving unit from Home Depot 						1 hour
+Assemble shelving unit 	    	 						1 hour
+Clean and move large desk 							1 hour
+Move equipment from desk to shelving unit 					2 hours
+Clean/Move equipment from Suzy's small desk to large desk 			1 hour
+
+	   	     	  	       	       	     				
+Purchase 5 short hdmi cables from Fry's        	     				1 hour
+Clean behind the TV unit     	  						30 minutes
+Rewire DirectTV FireStick et al. 						30 minutes
+Change account settings on Amazon 						20 minutes
+
+
+Total (Minutes):  1355
+Total (Hours):     22.58
