@@ -4,15 +4,6 @@ apt-get -y install emacs25-nox
 ## Change the PS1 prompt
 PS1="chime$ "
 
-## Change the framebuffer resolution
-emacs /etc/default/grub
-
-# Change line to:
-# GRUB_CMDLINE_LINUX_DEFAULT="splash vga=792"  or 795 or 799 for higher resolutions
-update-grub
-shutdown -r now
-
-
 ## Install the speakup software for the DEC Talk Express
 apt-get -y install speakup-tools
 modprobe speakup_dectlk
