@@ -47,3 +47,6 @@ alias rd '/usr/bin/sudo /sbin/modprobe  -r speakup_dectlk; /usr/bin/sudo /sbin/m
 alias ls 'ls -1'
 alias type 'less'
 #alias date +'%A %B %d %r %Z %Y'
+
+echo "Running chime startup script"
+sh /home/chime/Linux-Scripts/Chime/chime-startup.sh
