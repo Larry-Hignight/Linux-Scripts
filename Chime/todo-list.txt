@@ -3,8 +3,9 @@ Task										Status / Time Estimate
 Install Debian 9								Finished
 Install software								Finished
 Install Docker									Finished
-Configure tcsh									30 minutes
-Configure aliases								30 minutes
+Configure tcsh									Finished
+Configure aliases								Finished
+DecTalk is running slowly							TBD
 Configure scripts in /usr/local							30 minutes
 Attempt to recover deleted files 						3 hours
 Setup multiple sound cards 							3 hours
@@ -20,8 +21,8 @@ Task										Time Estimate
 Install Debian 9 								Finished
 Install software								Finished
 Install Docker									Finished
-Configure tcsh									30 minutes
-Configure aliases								30 minutes
+Configure tcsh									Finished
+Configure aliases								Finished
 Configure scripts in usr/local							30 minutes
 Install Voxin  									In Progress
 
