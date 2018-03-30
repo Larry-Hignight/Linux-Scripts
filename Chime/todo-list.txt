@@ -12,6 +12,7 @@ Update and/or Dockerize Dallas scripts 						6 hours (this is just a wild ass gu
 Switch from GRUB to LILO       							2 hours
 Install Vinux as a 2nd backup distro						2 hours
 Install Voxin  									Note - I don't know why I had this on the list
+Add bell mount points to the fstab file (reqs samba)				Discuss w/ Chime
 
 
 === Dance (laptop) ===
