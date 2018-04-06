@@ -1,0 +1,12 @@
+1. Run the ssh-keygen command on the client  __Do not use a passphrase__
+2. Copy the public key to the ssh server using ssh-copy-id chime@192.168.0.2
+3. Test that the public key was installed correctly using ssh chime@192.168.0.2
+
+# Optional
+4. If you need to remove a key, use ssh-keygen -R 192.168.0.2 to remove an existing key
+
+
+# Commands
+ssh-keygen
+ssh-copy-id chime@192.168.0.2
+ssh chime@192.168.0.2
