@@ -1,4 +1,4 @@
-## Add Chime to the sudoers file
+### Add Chime to the sudoers file
 su -m
 usermod -aG sudo username chime
 apt-get install sudo
@@ -9,10 +9,11 @@ PS1="chime$ "
 
 ## Install the speakup software for the DEC Talk Express
 sudo apt-get -y install speakup-tools
-modprobe speakup_dectlk
-emacs /etc/modules
-# add the following on a line: speakup_dectlk
+sudo modprobe speakup_dectlk
+sudo mv /etc/modules /etc/modules.orig
+sudo cp modules /etc/modules
 
+## Install the application software
 sudo apt-get -y install zip
 sudo apt-get -y install rar
 sudo apt-get -y install unrar
