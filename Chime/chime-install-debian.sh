@@ -1,5 +1,8 @@
-## Install Emacs
-apt-get -y install emacs25-nox
+## Add Chime to the sudoers file
+su -m
+usermod -aG sudo username chime
+apt-get install sudo
+exit
 
 ## Change the PS1 prompt
 PS1="chime$ "
