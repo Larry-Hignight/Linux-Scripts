@@ -14,6 +14,7 @@ Switch from GRUB to LILO       							2 hours
 Install Vinux as a 2nd backup distro						2 hours
 Install Voxin  									Note - I don't know why I had this on the list
 Add bell mount points to the fstab file (reqs samba)				Discuss w/ Chime
+Add chime to the sudoers file	   	      					30 minutes
 
 
 === Dance (laptop) ===
@@ -25,6 +26,7 @@ Configure tcsh									Finished
 Configure aliases								Finished
 Configure scripts in usr/local							30 minutes
 Install Voxin  									In Progress
+Add chime to the sudoers file	   	      					30 minutes
 
 
 === MISC ITEMS ===
