@@ -1,21 +1,29 @@
-==== Chime (desktop) ===
+==== Chime (Desktop - Ubuntu) ===
 Task										Status / Time Estimate
-Install Debian 9								Finished
+Install Ubuntu									Finished
 Install software								Finished
 Install Docker									Finished
 Configure tcsh									Finished
 Configure aliases								Finished
-DecTalk is running slowly							TBD
-Configure scripts in /usr/local							30 minutes
-Attempt to recover deleted files 						3 hours
-Setup multiple sound cards 							3 hours
+DecTalk is running slowly							Finished - Magically solved by switching from serial to usb and back
+Configure scripts in /usr/local							Finished - Replaced using the aliases file
+Use key files to mount bell                                                     Finished
+Attempt to recover deleted files 						4 hours
+Setup multiple sound cards 							4 hours
 Update and/or Dockerize Dallas scripts 						6 hours (this is just a wild ass guess)
-Switch from GRUB to LILO       							2 hours
-Install Vinux as a 2nd backup distro						2 hours
-Install Voxin  									Note - I don't know why I had this on the list
-Add bell mount points to the fstab file (reqs samba)				Discuss w/ Chime
-Add chime to the sudoers file	   	      					30 minutes
+Switch from GRUB to LILO       							3 hours
+Create the 911 docker image and alias                                           3 hours (another wag)
+Install hpodder                                                                 2 hours
 
+==== Chime (Desktop - Debian dual boot) ===
+Task										Status / Time Estimate
+Install Debian 9 (while maintaining the existing Ubuntu install)	        3 hours
+Install software								1 hour
+Install Docker									...
+Configure tcsh									...
+Configure aliases								...
+Configure scripts in /usr/local							...
+Add chime to the sudoers file	   	      					...
 
 === Dance (laptop) ===
 Task										Time Estimate
@@ -24,10 +32,14 @@ Install software								Finished
 Install Docker									Finished
 Configure tcsh									Finished
 Configure aliases								Finished
-Configure scripts in usr/local							30 minutes
-Install Voxin  									In Progress
-Add chime to the sudoers file	   	      					30 minutes
+Install Voxin  									Finished
+Unable to play audio when Voxin is running                                      2 hours
 
+=== Router ===
+Task										Time Estimate
+Open port 22 to chime 								2 hours
+Create user accounts on chime desktop (ubuntu and debian)                       1 hour
+Block ip address after x failed login attempts                                  1 hour
 
 === MISC ITEMS ===
 Task										Time Estimate
@@ -37,12 +49,10 @@ Clean and move large desk 							1 hour
 Move equipment from desk to shelving unit 					2 hours
 Clean/Move equipment from Suzy's small desk to large desk 			1 hour
 
-	   	     	  	       	       	     				
+
 Purchase 5 short hdmi cables from Fry's        	     				1 hour
 Clean behind the TV unit     	  						30 minutes
 Rewire DirectTV FireStick et al. 						30 minutes
 Change account settings on Amazon 						20 minutes
 
-
-Total (Minutes):  1355
-Total (Hours):     22.58
+Total (Hours):     40h 20m
