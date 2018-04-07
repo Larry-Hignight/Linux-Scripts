@@ -1,4 +1,4 @@
-echo "Setting the font to a higher resolution font (ie more lines per screen)"
+3echo "Setting the font to a higher resolution font (ie more lines per screen)"
 sh chime-install-setfont.sh
 echo "" && echo "Finished setting the font to a higher resolution font (ie more lines per screen)" && sleep 3
 
@@ -27,6 +27,11 @@ echo "Mounting file server using sshfs"
 echo ""
 sh mount-bell.sh
 echo "" && echo "Finished mounting file server using sshfs" && sleep 3
+
+echo "Adding symbolic links to scripts"
+echo ""
+sh chime-install-scripts.sh
+echo "" && echo "Finished adding symbolic links to scripts" && sleep 3
 
 echo "Removing old packages"
 echo ""
