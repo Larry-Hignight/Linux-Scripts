@@ -6,6 +6,7 @@ sudo apt-get -y install beep
 sudo apt-get -y install dos2unix
 sudo apt-get -y install dosemu
 sudo apt-get -y install ffmpeg
+sudo apt-get -y install firefox
 sudo apt-get -y install git
 sudo apt-get -y install lynx
 sudo apt-get -y install madplay
@@ -23,6 +24,7 @@ sudo apt-get -y install unrar
 sudo apt-get -y install uudeview
 sudo apt-get -y install vobcopy
 sudo apt-get -y install vorbis-tools
+sudo apt-get -y install xvfb
 sudo apt-get -y install yash
 sudo apt-get -y install zip
 
