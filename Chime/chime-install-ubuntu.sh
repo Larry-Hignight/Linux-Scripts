@@ -10,6 +10,11 @@ echo "Installing the application software"
 echo ""
 sh chime-install-applications.sh
 
+echo "Installing Docker"
+echo ""
+sh ../Docker/docker-ce-install-ubuntu.sh
+sh ../Docker/docker-compose-install-ubuntu.sh
+
 echo "Installing tcsh as the default shell"
 echo ""
 sh chime-install-tcsh.sh
