@@ -47,3 +47,18 @@ alias rd '/usr/bin/sudo /sbin/modprobe  -r speakup_dectlk; /usr/bin/sudo /sbin/m
 alias ls 'ls -1'
 alias type 'less'
 #alias date +'%A %B %d %r %Z %Y'
+
+# Section for running local scripts
+alias startup        "sh ~/Linux-Scripts/Chime/chime-startup.sh"
+alias mount-bell     "sh ~/Linux-Scripts/Chime/mount-bell.sh"
+alias tty-script     "sh ~/Linux-Scripts/Chime/tty-script.sh"
+alias unmount-bell   "sh ~/Linux-Scripts/Chime/unmount-bell.sh"
+alias cap            "sh ~/Linux-Scripts/Chime/Old-Scripts/cap"
+alias inflection     "sudo sh ~/Linux-Scripts/Chime/Old-Scripts/inflection.sh"
+alias jjs            "sh ~/Linux-Scripts/Chime/Old-Scripts/jjs"
+alias rn             "sh ~/Linux-Scripts/Chime/Old-Scripts/rn"
+alias space2dash     "sh ~/Linux-Scripts/Chime/Old-Scripts/space2dash"
+alias strm2mp3       "sh ~/Linux-Scripts/Chime/Old-Scripts/strm2mp3"
+alias thpodder       "sh ~/Linux-Scripts/Chime/Old-Scripts/thpodder"
+alias weather        "sh ~/Linux-Scripts/Chime/Old-Scripts/weather.sh"
+alias wx             "sh ~/Linux-Scripts/Chime/Old-Scripts/wx"

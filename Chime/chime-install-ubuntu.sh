@@ -12,12 +12,6 @@ echo ""
 sh chime-install-applications.sh
 echo "" && echo "Finished installing the application software" && sleep 3
 
-echo "Installing Docker"
-echo ""
-sh ../Docker/docker-ce-install-ubuntu.sh
-sh ../Docker/docker-compose-install-ubuntu.sh
-echo "" && echo "Finished installing Docker" && sleep 3
-
 echo "Installing tcsh as the default shell"
 echo ""
 sh chime-install-tcsh.sh
@@ -27,11 +21,6 @@ echo "Mounting file server using sshfs"
 echo ""
 sh mount-bell.sh
 echo "" && echo "Finished mounting file server using sshfs" && sleep 3
-
-echo "Adding symbolic links to scripts"
-echo ""
-sh chime-install-scripts.sh
-echo "" && echo "Finished adding symbolic links to scripts" && sleep 3
 
 echo "Removing old packages"
 echo ""
