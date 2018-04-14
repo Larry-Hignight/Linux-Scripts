@@ -1,4 +1,4 @@
-3echo "Setting the font to a higher resolution font (ie more lines per screen)"
+echo "Setting the font to a higher resolution font (ie more lines per screen)"
 sh chime-install-setfont.sh
 echo "" && echo "Finished setting the font to a higher resolution font (ie more lines per screen)" && sleep 3
 
