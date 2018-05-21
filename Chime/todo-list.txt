@@ -56,3 +56,11 @@ Rewire DirectTV FireStick et al. 						30 minutes
 Change account settings on Amazon 						20 minutes
 
 Total (Hours):     40h 20m
+
+
+New #1 - Create a script to update the apt.sources in Debian (and Ubuntu?)
+       - deb https://www.deb-multimedia.org buster main non-free
+       - deb http://security.debian.org/ wheezy/updates non-free
+       - deb ftp://ftp.us.debian.org/debian/ wheezy non-free
+
+New #2 - Does both rar and unrar need to be install separately?

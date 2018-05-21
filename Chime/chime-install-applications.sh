@@ -16,6 +16,7 @@ sudo apt-get -y install mpg321
 sudo apt-get -y install mplayer
 sudo apt-get -y install mpv
 sudo apt-get -y install ncftp
+sudo apt-get -y install par par2
 sudo apt-get -y install rar
 sudo apt-get -y install sshfs
 sudo apt-get -y install tcsh
