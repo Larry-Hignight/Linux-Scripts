@@ -12,7 +12,6 @@ echo "#######################"
 sudo apt-get -y install ffmpeg         # Audio and video encoder
 sudo apt-get -y install vlc            # Media player
 sudo apt-get -y install mpv            # CLI video player
-sudo apt-get -y install xvfb           # CLI video player via frame buffer
 sudo apt-get -y install openshot       # Non-Linear video editor
 sudo apt-get -y install handbrake      # Compress DVD files
 sudo apt-get -y install audacity       # Non-Linear sound editor
@@ -93,6 +92,21 @@ sudo apt-get -y install git
 sudo apt-get -y install dos2unix
 sudo apt-get -y install meld
 sudo apt-get -y install screen
+sudo apt-get -y install xvfb
+
+
+echo "##############################"
+echo "## R & RStudio Installation ##"
+echo "##############################"
+sudo apt-get -y install r-base                # Note - I changed this from r-base-core; TODO: Review these packages
+sudo apt-get -y install libjpeg62             # Required for RStudio
+sudo apt-get -y install libssl-dev            # Required for the httr and openssl packages
+sudo apt-get -y install libcurl4-openssl-dev  # Required for the RCurl package
+sudo apt-get -y install libxml2-dev           # Required for the XML package
+
+wget https://download1.rstudio.org/rstudio-xenial-1.1.423-amd64.deb
+sudo dpkg -i rstudio-xenial-1.1.423-amd64.deb
+rm rstudio-xenial-1.1.423-amd64.deb
 
 
 echo "######################"
@@ -120,20 +134,6 @@ echo "####################"
 # http://developer.android.com/sdk/index.html
 # Simply unzip then run the setup script in bin
 # Note:  There is mention of the KVM kernel option on Linux that should improve emulation performance
-
-
-echo "##############################"
-echo "## R & RStudio Installation ##"
-echo "##############################"
-sudo apt-get -y install r-base                # Note - I changed this from r-base-core; TODO: Review these packages
-sudo apt-get -y install libjpeg62             # Required for RStudio
-sudo apt-get -y install libssl-dev            # Required for the httr and openssl packages
-sudo apt-get -y install libcurl4-openssl-dev  # Required for the RCurl package
-sudo apt-get -y install libxml2-dev           # Required for the XML package
-
-wget https://download1.rstudio.org/rstudio-xenial-1.1.423-amd64.deb
-sudo dpkg -i rstudio-xenial-1.1.423-amd64.deb
-rm rstudio-xenial-1.1.423-amd64.deb
 
 
 echo "######################################"
