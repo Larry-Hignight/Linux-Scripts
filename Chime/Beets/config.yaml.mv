@@ -1,0 +1,7 @@
+directory: /home
+library: /root/.config/beets/library.db
+
+import:
+    move: yes
+
+plugins: chroma
