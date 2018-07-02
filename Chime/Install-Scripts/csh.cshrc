@@ -39,6 +39,7 @@ alias start-privoxy   "sudo /etc/init.d/privoxy restart"
 alias reload-dectalk  "/usr/bin/sudo /sbin/modprobe  -r speakup_dectlk; /usr/bin/sudo /sbin/modprobe  speakup_dectlk "
 alias rd              "/usr/bin/sudo /sbin/modprobe  -r speakup_dectlk; /usr/bin/sudo /sbin/modprobe  speakup_dectlk "
 alias type            "less"
+alias time            "date +'%A %B %d %r %Z %Y'"
 #alias date            +'%A %B %d %r %Z %Y'
 
 # Section for running local scripts
