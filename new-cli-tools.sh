@@ -8,6 +8,11 @@
 ## TODO
 ## Oh-My-Zsh (https://medium.com/wearetheledger/oh-my-zsh-made-for-cli-lovers-installation-guide-3131ca5491fb)
 ## Highlight (http://www.andre-simon.de/doku/highlight/en/highlight.php)
+## noti (https://github.com/variadico/noti)
+## csvkit (https://csvkit.readthedocs.io/en/1.0.3/)
+## entr (http://www.entrproject.org/)
+## diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
+## ack (apt-get install ack-grep), ag, jq
 
 
 ##################################
@@ -71,3 +76,15 @@ sudo apt-get install oping
 # prettyping is a TUI for ping
 # Like oping/noping, the output is pretty cool, but the installation and setup just aren't worth the effort outside of a demo
 # I don't see much value in using either prettyping or oping.  While noping is pretty cool, if it doesn't hose your terminal.
+
+
+######################################
+## TOP like programs: glances, nmon ##
+######################################
+
+# nmon
+sudo apt-get install nmon
+
+# glances
+sudo apt-get install glances
+sudo -H pip install --upgrade glances
