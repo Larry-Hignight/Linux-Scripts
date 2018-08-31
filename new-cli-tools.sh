@@ -27,6 +27,19 @@ sudo dpkg -i bat_0.6.0_amd64.deb
 
 
 ############################
+## DU like programs: ncdu ##
+############################
+
+# ncdu is a disk usage analyzer w/ a nice ncurses TUI
+# This tool is incredibly useful and the interface makes it easy to find where disk space is being used
+# Website:  https://dev.yorhel.nl/ncdu
+sudo apt-get install ncdu
+
+# nnn is a terminal based file manager
+# Github: https://github.com/jarun/nnn
+sudo apt-get install nnn
+
+############################
 ## FIND like programs: fd ##
 ############################
 
