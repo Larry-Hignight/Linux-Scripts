@@ -82,9 +82,11 @@ sudo apt-get install oping
 ## TOP like programs: glances, nmon ##
 ######################################
 
-# nmon
+# nmon is interesting because it monitors different parts of the system than htop and glances
+# Website: https://haydenjames.io/alternatives-top-htop/
 sudo apt-get install nmon
 
-# glances
+# glances is a very good looking system monitor (w/ a dark background) that also has a section for monitoring containers
+# Website: https://haydenjames.io/alternatives-top-htop/
 sudo apt-get install glances
 sudo -H pip install --upgrade glances
