@@ -15,9 +15,13 @@
 ## ack (apt-get install ack-grep), ag, jq
 
 
-##################################
-## CAT like programs: bat, ccat ##
-##################################
+#######################################
+## CAT like programs: tac, bat, ccat ##
+#######################################
+
+# tac is cat w/ reverse file output and is installed by default in Ubuntu
+# Example: tac filename
+
 
 # bat is similar to cat w/ color syntax highlighting, line numbers, git integration and "file decorations".
 # Github: https://github.com/sharkdp/bat
