@@ -1,11 +1,19 @@
 echo "############################"
 echo "## Applications / General ##"
 echo "############################"
+sudo apt-get -y install anki
+sudo apt-get -y install html2text
+sudo apt-get -y install pdf2htmlex
 sudo apt-get -y install steam
 sudo apt-get -y install stellarium
 sudo apt-get -y install xubuntu-community-wallpapers
-sudo apt-get -y install html2text
-sudo apt-get -y install pdf2htmlex
+
+
+echo "##################"
+echo "## Web Browsers ##"
+echo "##################"
+sudo apt-get -y install chromium-browser
+sudo apt-get -y install lynx
 
 
 echo "#######################"
@@ -171,13 +179,6 @@ sudo apt-get -y install pmount       # A handy tool for mounting hardware (eg th
 sudo apt-get -y install wavemon      # A cool ncurses based wifi monitor
 #sudo apt-get -y install iotop       # Requires a sudoer to run it with root level access
 sudo apt-get -y install exfat-utils  # Support for the exfat filesystem
-
-
-echo "##################"
-echo "## Web Browsers ##"
-echo "##################"
-sudo apt-get -y install lynx
-sudo apt-get -y install chromium-browser
 
 
 echo "################################"
