@@ -13,6 +13,7 @@ echo "##################"
 echo "## Web Browsers ##"
 echo "##################"
 sudo apt-get -y install chromium-browser
+sudo apt-get -y install firefox
 sudo apt-get -y install lynx
 
 
