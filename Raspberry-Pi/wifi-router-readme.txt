@@ -55,6 +55,3 @@ wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 ssid=NETWORK
 wpa_passphrase=PASSWORD
-
-
-rbsKQGKoD9lLM4nOkTWcbbLq72y3bs
