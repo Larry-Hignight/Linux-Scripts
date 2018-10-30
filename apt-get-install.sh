@@ -27,6 +27,7 @@ sudo apt-get -y install openshot       # Non-Linear video editor
 sudo apt-get -y install handbrake      # Compress DVD files
 sudo apt-get -y install audacity       # Non-Linear sound editor
 sudo apt-get -y install xloadimage     # xview - CLI image viewer
+sudo apt-get -y install exif           # View EXIF data in JPEG files
 
 
 echo "###########################"
