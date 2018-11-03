@@ -13,6 +13,7 @@
 ## entr (http://www.entrproject.org/)
 ## diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
 ## ack (apt-get install ack-grep), ag, jq
+## multitail looks promising (apt-get install multitail)
 
 
 #######################################
