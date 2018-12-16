@@ -177,10 +177,11 @@ sudo apt-get -y install hardinfo
 sudo apt-get -y install cpuid
 sudo apt-get -y install inxi
 sudo apt-get -y install htop
-sudo apt-get -y install pmount       # A handy tool for mounting hardware (eg thumb drives)
-sudo apt-get -y install wavemon      # A cool ncurses based wifi monitor
-#sudo apt-get -y install iotop       # Requires a sudoer to run it with root level access
-sudo apt-get -y install exfat-utils  # Support for the exfat filesystem
+sudo apt-get -y install pmount             # A handy tool for mounting hardware (eg thumb drives)
+sudo apt-get -y install wavemon            # A cool ncurses based wifi monitor
+# sudo apt-get -y install iotop            # Requires a sudoer to run it with root level access
+sudo apt-get -y install exfat-utils        # Support for the exfat filesystem
+# sudo apt-get -y install intel-gpu-tools  # A top like program for Intel GPUs (sudo intel_gpu_top)
 
 
 echo "################################"
