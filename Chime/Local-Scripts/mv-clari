@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Move the clari groups out of the .newsrc file into the .newsrc.clari file.
+
+TMPFILE=/tmp/mvclari$$
+GREP=egrep
+PATTERN="^clari\."
+#MYNEWSRC=${HOME}/.newsrc
+MYNEWSRC=${NEWSRC}
+CLARIRC=${HOME}/.newsrc.clari
+
+${GREP} ${PATTERN} ${MYNEWSRC} > ${TMPFILE}
+
+if [ "$?" -eq 0 ]  # it found something
+  then
+    cat ${TMPFILE} >> ${CLARIRC}
+    sed -e /^clari\./d < ${MYNEWSRC} > ${TMPFILE}
+    mv -f ${TMPFILE} ${MYNEWSRC} 2>/dev/null
+fi
+
+rm -f ${TMPFILE}
+

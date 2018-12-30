@@ -1,0 +1,16 @@
+workers=3
+retain=6
+debug=0
+log=binger.log
+loglevel=4
+logflush=4
+infodir=~/binger
+downloaddir=~/news
+refresh=20
+server=news.giganews.com {
+user=your_user
+pass=your_password
+priority=1
+connects=10
+dispname=giganews
+timeout=40 }

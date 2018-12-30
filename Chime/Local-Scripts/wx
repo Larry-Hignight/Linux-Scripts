@@ -1,0 +1,84 @@
+#! /bin/sh
+#
+# @(#) wx 1.8, November 25 1992
+#
+# Copyright (C) 1992, Peter St.Wecker (pswecker@med.unc.edu)
+#
+# This script may be freely re-distributed at no charge provided that
+# this notice is left intact.  Modified copies must preserve this notice.
+
+# Patched to use the only remaining WX server - city codes only.
+# Billy Y..  25-Jan-00
+
+# Usage: wx airport-city-code --> retrieve WX for a city  (ie: RDU, NYC)
+#        wx -x                --> connect interactively to WX server
+#        wx -h                --> show help message
+
+site="rainmaker.wunderground.com"
+# port="3000"
+
+case $1 in
+     [0-9]) m=0$1 ;;
+         *) m=$1 ;;
+esac
+
+if [ $# -eq 1 ]
+then
+      case $m in
+      [A-Za-z][A-Za-z][A-Za-z])
+           (echo '' ; echo $1 
+           echo 'x' ; sleep 2) | \
+           telnet $site $port  2>/dev/null | sed \
+           -e '1,/^Press Return for menu/d' \
+           -e 's/or enter 3 letter forecast city code-- //' \
+	   -e '/                         CITY FORECAST MENU/d' \
+	   -e '/                ---------------------------------------------------/d' \
+	   -e '/                1) Print forecast for selected city/d' \
+	   -e '/                2) Print climatic data for selected city/d' \
+	   -e '/                3) Display 3-letter city codes for a selected state/d' \
+	   -e '/                4) Display all 2-letter state codes/d' \
+	   -e '/                M) Return to main menu/d' \
+	   -e '/                X) Exit program/d' \
+	   -e '/                ?) Help/d' \
+	   -e '/.Extended forecast.../d' \
+	   -e '/   Press Return to continue, M to return to menu, X to exit: -------------------------------------------------------------------------------/d' \
+	   -e '/\*                         Thanks for stopping by!                             \*/d' \
+	   -e '/\*                     Be sure to check out our WWW site.                      \*/d' \
+	   -e '/\*                       http:\/\/www.wunderground.com\/	                      \*	/d' \
+	   -e '/-------------------------------------------------------------------------------/d' \
+           | tr -d '\015'
+      exit
+      ;;
+     -h)
+	   echo 1>&2 'Usage:  wx airport-city-code     ie: RDU, NYC'
+	   echo 1>&2 '        wx -x                    Connect interactively to WX server'
+      exit 1
+      ;;
+      -x)
+           telnet $site $port
+      exit
+      ;;
+      -*)
+           echo 1>&2 $1': Unknown option.'
+	   echo 1>&2 'Usage:  wx airport-city-code     ie: RDU, NYC'
+	   echo 1>&2 '        wx -x                    Connect interactively to WX server'
+      exit 1
+      ;;
+      *)
+           echo 1>&2 $1': Not an airport-city-code.'
+           exit 1
+           ;;
+      esac
+fi
+
+# If more than one entry on command-line, it's not supported here...
+
+if [ $# -ne 1 ]
+then
+      case $1 in
+      *) echo 1>&2 'Usage:  wx airport-city-code     ie: RDU, NYC'
+         echo 1>&2 '        wx -x                    Connect interactively to WX server'
+      exit 1
+      ;; 
+      esac
+fi

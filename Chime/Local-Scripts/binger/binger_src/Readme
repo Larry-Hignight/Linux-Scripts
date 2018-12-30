@@ -1,0 +1,65 @@
+This is binger the binary news-group extracter.
+I have attempted to create a better text-based alternative than other
+stuff I have had to put up with in the past.
+To install, untar with tar zxf binger.tgz
+cd to binger_src and type make.
+copy the binger and *.hlp files to a place on your path such as:
+/usr/local/bin
+copy the config.sample to ~/.binger.cfg and edit appropriately.
+It supports multiple news servers (only moderately tested)
+
+to start simply type binger.
+also you can do:
+binger -s (no sync)
+binger -b (batch update mode)
+binger -i (ignore threading)
+binger -z nzb-file-name (read and parse an nzb file)
+nzb file may be g-zipped and will be automatically unzipped.
+you can define a download method in lynx as I did for binsearch.info.
+then when you get a gzipped nzb you can go directly to binger
+and get the content referenced by the nzb file using article commands.
+
+f1 gives help. if you are at the group level you get group help.
+when in a group, you get article help.
+when you run for the first time, you will have no groups.
+The active groups will be read from the server and you can subscribe
+with shell style globbing patterns.
+supported operators are:
+^ anchor to start
+$ anchor to end
+. any char.
+* any chars.
+[ chars] match a range of chars as in [a-zA-Z0-9]
+lowercase letters match both cases and uppercase match only uppercase.
+a string of plain chars matches anywhere like the c function strstr()
+
+this simple pattern matching is used at the article level also.
+
+When getting started for the first time:
+
+You need to subscribe to news groups before reading them.
+As most servers have a large list of groups over 3500, you
+have to get a sublist. If you were interested in music you would type
+/music/y
+A list of all groups containing the word music in there name would be displayed.
+then you could cursor up/down and press the letter s to subscribe.
+pressing enter on a group subscribes and immediately puts you
+in the group for article reading.
+You can also use a pattern to do a bulk subscribe as in:
+/jazz/s
+this would subscribe to all jazz groups in the sublist.
+when you first enter a group for article reading it asks you for the
+retention days. this is how many days you want binger to keep articles.
+A big value means that you use more memory and the initial header loading
+takes longer. Each header is approx 3k of data so if you have a data limit
+or slow connection, adjust accordingly. Mine is set to 30.
+If you kill an article, it can be undeleted if less than
+retention days old. You can adjust retention at anytime and it will
+get more or delete accordingly.
+If you increase this value, it will do a binary search against the server to
+figure out where to start getting articles. The number of pending
+articles will be large for several seconds while the probe is adjusting.
+In a couple of cases, this has behaved oddly and may have to be interrupted
+with control-c. You will not kill binger, but simplycancel the probe.
+
+For more info, pressing f1 will bring up basic help with examples.

@@ -1,0 +1,62 @@
+If you are new to binger, see the end of this help for examples.
+
+binger group commands:
+/pattern/command
+Apply the command to the pattern specified.
+command is one of:
+s,  subscribe to the groups.
+u,  unsubscribe/kill from the groups.
+y,  yank in list from server.
+    Note: this list is cached to improve performance.
+
+single key stroke group level commands:
+s,  subscribe to current group.
+u,  unsubscribe from current group.
+p,  go to previous subscribed group.
+n,  go to next subscribed group.
+r,  get overview in background for current group.
+R (uppercase r),  set retention days for current group.
+q  quit.
+x,  print transfer stats for servers.
+b, print background download status.
+Z (uppercase z), zap all articles in current group.
+z read nzbfile, you will be prompted for name.
+can be gz or regular file.
+
+cursor up/down, prev/next group.
+prevpage,  previous page of groups.
+space/nextpage, next page of groups.
+home,  first group.
+end,  last group.
+cursor right or, enter  enter group.
+e, enter group without updating overview information.
+
+group notes:
+You may enter a number followed by enter to goto a speciffic group.
+an asterisk before the group indicates it is subscribed.
+
+Examples:
+You need to subscribe to news groups before reading them.
+As most servers have a large list of groups over 3500, you
+have to get a sublist. If you were interested in music you would type
+/music/y
+A list of all groups containing the word music in there name would be displayed.
+then you could cursor up/down and press the letter s to subscribe.
+pressing enter on a group subscribes and immediately puts you
+in the group for article reading.
+You can also use a pattern to do a bulk subscribe as in:
+/jazz/s
+this would subscribe to all jazz groups in the sublist.
+when you first enter a group for article reading it asks you for the
+retention days. this is how many days you want binger to keep articles.
+A big value means that you use more memory and the initial header loading
+takes longer. Each header is approx 3k of data so if you have a data limit
+or slow connection, adjust accordingly. Mine is set to 30.
+If you kill an article, it can be undeleted if less than
+retention days old. You can adjust retention at anytime and it will
+get more or delete accordingly.
+If you increase this value, it will do a binary search against the server to
+figure out where to start getting articles. The number of pending
+articles will be large for several seconds while the probe is adjusting.
+In a couple of cases, this has behaved oddly and may have to be interrupted
+with control-c. You will not kill binger, but simplycancel the probe.

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# This command will sort Larry's .newsrc file alphabetically.
+# Sun Apr  2 18:28:39 PDT 2000 -- jimmy@tokyojim.com
+
+NEWSRC=${HOME}/.newsrc
+NEWSBAK=${HOME}/.newsrc.save
+TMPFILE=/tmp/.newsrc$$
+
+# make a backup copy of the newsrc file just in case
+cp -f ${NEWSRC} ${NEWSBAK}
+
+sort ${NEWSRC} > ${TMPFILE}
+mv -f ${TMPFILE} ${NEWSRC} 2>/dev/null

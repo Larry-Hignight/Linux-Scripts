@@ -1,0 +1,113 @@
+If you are new to binger, see the end of this help for examples.
+
+article level commands
+/pattern/command [>path]
+Apply the command to the pattern specified.
+for save commands, use the supplied path.
+The pattern match clears previous matches unless a + (add-to)is one of the
+command characters.
+command is any of:
+a,  search by author instead of subject.
+B,  (uppercase b), background download.
+d,  foreground download.
+f,  add pattern to group filter list.
+I,  (uppercase i), background download including incomplete.
+k,  kill articles.
++ (plus),  add to previous selections
+< (less than), mark as not loaded
+u, undelete articles. ( on its own or with a or <)
+
+single keystroke article commands.
+enter,  read article.  positions at start of body, page-up to read header.
+1,  delete single part articles.
++,  add article to matched list.
+:,  command characters, apply the command to the current matched list.
+-,  remove article from matched list.
+<,  mark article as not loaded.
+a (uppercase a),  kill all articles with same author as current article.
+A,  display date and author for current article.
+b,  display count of background downloads.
+B (uppercase b),  background download articles.
+C (uppercase c),  cancel all background downloads.
+d,  foreground download article.
+D (uppercase d),  foreground download and kill article.
+f,  kill using group filter.
+F (uppercase f),  post a follow-up.
+i,  get incomplete articles.
+I (uppercase i),  background download articles including incompletes.
+k,  kill article.
+K (uppercase k),  kill page of articles.
+M (uppercase m),  find missing article numbers and query server for them.
+    warning! this should be used in extreme cases as it can take awhile.
+m,  change sort mode, one of subject, author or date
+n,  goto next matched article.
+p,  goto previous matched article.
+P (uppercase p),  post to group.
+r,  refresh group from server.
+R (uppercase r),  set retention days for group.
+s,  display full subject on bottom lines of screen.
+S (uppercase s),  change subject display mode.
+   modes cycle through start, middle and end.
+u,  undelete articles from last pattern match.
+Z (uppercase z),  zap all articles.
+cursor left,  return to group menu.
+cursor right,  display articles in thread.  Positions at first pattern match.
+    cursor left,  to return to the normal thread display.
+cursor up/down, previous/next article.
+prepage,  previous page of articles.
+space/nextpage,  next page of articles.
+? (questionmark),  give article stats.
+    includes whether articles are complete, and k-bytes from each server.
+F2, give stats, like ?
+F3, give stats for last matched pattern.
+
+article notes:
+An article is marked loaded after it is downloaded and will not
+be reloaded with subsequent d or D commands.
+You must use the un-load command if you want to re-get it.
+a single percent before the article means it is complete.
+if it is followed by an at sign it means a thread.
+if the at sign is replaced by a second percent it means all articles
+in the thread are complete.
+you may examine individual articles in a thread by cursor right.
+Single key commands apply to the current article or thread.
+A download request on a thread will only get articles which have
+not been already downloaded or queued for download.
+
+article reading commands:
+The reader starts at the beginning of the article body.
+The headers can be read with page-up or home/t.
+prevpage or b,  back one page.
+nextpage or space,  forward one page.
+home or t,  first page.
+end or e,  last page.
+cursor left or q, return to article selecter.
+k,  kill article.
+s,  save article, you will be prompted for filename.
+p, previous part in article.
+n, next part in article.
+
+examples:
+if you want to download all great big sea articles do:
+/great big sea/B
+this would queue them for background download, pressing lowercase b gives you
+a running status of the download progress.
+hit any key to return to the article screen.
+if you append a > and a path for a download, that download will
+be put in a subdirectory as follows:
+/great big sea/B>turn
+The subdirectory turn would be created and the download would go
+into that subdirectory.
+if you want to get a bunch of articles and then start a download, do:
+/light/
+/darkness/+
+/something else/+
+:B
+this would get all articles matching the 3 patterns, note the + modifier
+on 2 and 3. the :B applies the background download to the list.
+if you deleted something you have downloaded and the articles are killed
+but still within the retension limit you can do:
+/my mistake/u<
+the my mistake articles will be undeleted and mark not loaded.
+Then you can do :B if the list is exactly what you want to re-get.
+Otherwise, you can use standard selection commands to get what you want.

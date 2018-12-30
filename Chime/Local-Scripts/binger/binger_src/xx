@@ -1,0 +1,90 @@
+/*
+ *
+ * Copyright (C) 2016 David Borowski.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * this file is part of the binger news reader, a multithreaded text-based
+ * news reading program for the visually impaired and others who wish they were.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA	02111-1307	USA
+ *
+ */
+#include <ctype.h>
+#include "common.h"
+#include "server.h"
+#include <unistd.h>
+#include <curses.h>
+#include <time.h>
+
+extern int nntp_debug;
+static char pattern[80], cmd_buf[80];
+
+int
+GetKey( int timeout ) {
+	fd_set readset;
+	struct timeval tm = { 0, 0 };
+	if ( timeout > 0 ) {
+		tm.tv_sec = timeout;
+		FD_ZERO( &readset );
+		FD_SET( 0, &readset );
+		if ( select( 1, &readset, 0, 0, &tm ) == 0 ) return 0;
+		}
+	return getch( );
+}
+
+char *
+GetBuff( char *buf, int line, int key ) {
+	if ( !buf ) buf = cmd_buf;
+	*buf = 0;
+	move( line,0 );
+	clrtoeol( );
+	if ( key > 0 ) ungetch( key );
+	echo();
+	refresh( );
+	getnstr( buf, 75 );
+	noecho();
+	move( line,0 );
+	clrtoeol( );
+	refresh( );
+	Trim( buf );
+	return buf;
+}
+
+enum { P_STAR = 1, P_RANGE, P_END, P_CHAR_RANGE, P_QUESTION };
+
+char *
+LastPattern( void ) {
+	return pattern;
+}
+
+char *
+GetPattern( char *in ) {
+	int inrange = 0;
+	char *pp = pattern, *ps = in;
+	char ch;
+	if ( !ps ) ps = GetBuff( NULL, LINES-1, '/' );
+	if ( !*ps ) return 0;
+	ps++;
+	ch = *ps;
+	if ( '?' == ch || '*' == ch || '\0' == ch )
+		return 0;
+	while ( (ch = *ps ) ) {
+		ps++;
+		if ( ch == '/' ) break;
+		switch ( ch ) {
+			case '*':
+				*pp++ = (inrange) ? ch : P_STAR;
+				break;
+			case '?':
+				*pp++ = (inrange) ? ch : P_QUESTION;
+				break;
