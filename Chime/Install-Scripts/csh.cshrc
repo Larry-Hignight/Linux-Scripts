@@ -94,13 +94,13 @@ alias snip-art        "sh /usr/local/bin/mp3_image_removal.sh"
 
 ## Chime-OCR aliases ------------------------------------------------------------------------------------------
 
-alias ocr             "python3 ~/Chime-OCR/ocr.py"
+alias ocr             "python3 /usr/local/Chime-OCR/ocr.py"
 
 
 ## Old aliases ------------------------------------------------------------------------------------------------
 
 #alias cap            "sh /usr/local/bin/cap"
-#alias d-record       "/home/chime/docker_record/new/docker_record.sh"
+#alias d-record       "/usr/local/docker_record/new/docker_record.sh"
 #alias pilot          "pilot -g"
 #alias rcbs           "/usr/local/bin/rcbs.sh"
 #alias rvlc           "/usr/local/bin/rvlc.sh"
