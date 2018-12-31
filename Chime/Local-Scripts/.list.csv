@@ -1,0 +1,17 @@
+cbsn,https://www.cbsnews.com/common/video/cbsn_header_prod.m3u8,mp4
+al-jazeera,https://english.streaming.aljazeera.net/aljazeera/english2/index1296.m3u8,mp4
+trt world,https://trtworld.ercdn.net/trtworld/trtworld_1080p.m3u8,mp4
+abc news radio,http://abc-news.akacast.akamaistream.net/7/730/126490/v1/espn.akacast.akamaistream.net/abc-news,mp3
+voa-radio,http://205.185.220.36/7/325/437810/v1/ibb.akacast.akamaistream.net/voa28,mp3
+france24,http://static.france24.com/live/F24_EN_LO_HLS/live_web.m3u8,mp4
+rewound-radio,http://71.125.37.66:8000/stream,mp3
+hawaii-news-now,https://livestream-f.akamaihd.net/i/12139043_3798937_lsi8047gm68q7jopk9w_1@446992/master.m3u8?__b__=678&dw=14400&hdnea=st=1534987416~exp=1534989216~acl=/i/12139043_3798937_lsi8047gm68q7jopk9w_1@446992/*~hmac=bd3aa8f501b86bced6c83e13b828200e1b2aa3d4f5547fe46a634289fba464d8&__a__=off,mp4
+jbs,http://50.7.77.114:8514/,mp3
+npr-24hour-program-stream,http://nprdmp-live01-mp3.akacast.akamaistream.net/7/998/364916/v1/npr.akacast.akamaistream.net/nprdmp_live01_mp3,mp3
+airchex-live,http://gemini.shoutca.st:8199/stream,mp3
+un-live,https://bcliveunivsecure-lh.akamaihd.net/i/un150_1@575439/master.m3u8,mp4
+voa-tv,https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/master.m3u8,mp4
+press-tv-iran,https://5a61de8ed719d.streamlock.net/liveprs/smil:liveprs.smil/playlist.m3u8,mp4
+fun-tower-radio,http://listen.djcmedia.com:80/funtowerhigh,mp3
+i-heart-nbc-radio,https://cdn-chunks.prod.ihrhls.com/6043/ahZGdELiCu9p-154155392-9984.aac,mp4
+halafax-military-forum,https://5b4aa1d044c5b.streamlock.net:443/1253live/_definst_/showtech1.smil/playlist.m3u8,mp4
