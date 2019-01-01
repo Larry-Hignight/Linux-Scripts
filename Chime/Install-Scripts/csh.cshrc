@@ -33,7 +33,7 @@ alias zip	      "zip -v"
 
 ## Shellworld aliases -----------------------------------------------------------------------------------------
 
-alias fm              "lynx -show_cursor -cfg /home/chime/lynx.cfg"
+alias fm              "lynx -cfg /home/chime/lynx.cfg"
 alias frm	      "frm | sort"
 alias start-privoxy   "sudo /etc/init.d/privoxy restart"
 alias sw              "ssh -p 845 server2.shellworld.net"
