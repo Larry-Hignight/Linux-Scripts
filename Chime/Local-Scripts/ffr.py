@@ -5,8 +5,7 @@ from subprocess import call
 filePath=None
 wait=3
 
-listFile = '/home/chime/linux-scripts/.list.csv'
-# listFile = '.list.csv'
+listFile = '/usr/local/bin/.list.csv'
 
 def main_menu(): 
     os.system('clear')

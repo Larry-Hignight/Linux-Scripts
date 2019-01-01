@@ -1,4 +1,4 @@
-echo "running the inflection script" && echo "root-beer" | sudo -S sh /home/chime/Linux-Scripts/Chime/inflection.sh && echo "successful"
+echo "running the inflection script" && inflection && echo "successful"
 
 echo "setting tty1 to 135 lines" && stty rows 135 && echo "successful"
 
