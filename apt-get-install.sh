@@ -187,6 +187,8 @@ sudo apt-get -y install exfat-utils        # Support for the exfat filesystem
 echo "################################"
 echo "## Games - Benchmarks - Demos ##"
 echo "################################"
+sudo apt-get -y install xboard           # X Window System Chess Board
+sudo apt-get -y install quarry           # Board games Go, Amazons, and Reversi (a.k.a. Othello)
 sudo apt-get -y install gnubg            # GNU Backgammon
 sudo apt-get -y install neverball        # Marble balance game
 sudo apt-get -y install briquolo         # Breakout style game
