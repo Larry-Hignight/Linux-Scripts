@@ -101,8 +101,9 @@ echo "## Development Tools ##"
 echo "#######################"
 sudo apt -y install emacs25
 sudo apt -y install git
-sudo apt -y install dos2unix
+sudo apt -y install devscripts
 sudo apt -y install meld
+sudo apt -y install dos2unix
 sudo apt -y install screen
 sudo apt -y install xvfb
 
