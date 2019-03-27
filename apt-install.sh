@@ -102,6 +102,7 @@ echo "#######################"
 sudo apt -y install emacs25
 sudo apt -y install git
 sudo apt -y install devscripts
+sudo apt -y install ubuntu-dev-tools
 sudo apt -y install meld
 sudo apt -y install dos2unix
 sudo apt -y install screen
@@ -189,6 +190,10 @@ echo "################################"
 echo "## Games - Benchmarks - Demos ##"
 echo "################################"
 sudo apt -y install xboard           # X Window System Chess Board
+sudo apt -y install gnuchess         # GNU Chess engine
+sudo apt -y install crafty           # Crafty chess engine
+sudo apt -y install stockfish        # Stockfish chess engine#
+sudo apt -y install polyglot         # Chess engine protocol adaptor, connects UCI engines to xboard
 sudo apt -y install quarry           # Board games Go, Amazons, and Reversi (a.k.a. Othello)
 sudo apt -y install gnubg            # GNU Backgammon
 sudo apt -y install neverball        # Marble balance game
