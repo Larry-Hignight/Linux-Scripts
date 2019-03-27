@@ -192,7 +192,10 @@ echo "################################"
 sudo apt -y install xboard           # X Window System Chess Board
 sudo apt -y install gnuchess         # GNU Chess engine
 sudo apt -y install crafty           # Crafty chess engine
-sudo apt -y install stockfish        # Stockfish chess engine#
+sudo apt -y install stockfish        # Stockfish chess engine
+sudo apt -y install fruit            # Fruit 2.1 chess engine
+sudo apt -y install toga2            # Toga II chess engine
+sudo apt -y install scid             # Chess database with play and training functionality
 sudo apt -y install polyglot         # Chess engine protocol adaptor, connects UCI engines to xboard
 sudo apt -y install quarry           # Board games Go, Amazons, and Reversi (a.k.a. Othello)
 sudo apt -y install gnubg            # GNU Backgammon
