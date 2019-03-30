@@ -112,11 +112,12 @@ sudo apt -y install xvfb
 echo "##############################"
 echo "## R & RStudio Installation ##"
 echo "##############################"
-sudo apt -y install r-base                # Note - I changed this from r-base-core; TODO: Review these packages
-sudo apt -y install libjpeg62             # Required for RStudio
-sudo apt -y install libssl-dev            # Required for the httr and openssl packages
-sudo apt -y install libcurl4-openssl-dev  # Required for the RCurl package
-sudo apt -y install libxml2-dev           # Required for the XML package
+sudo apt -y install r-base                     # Note - I changed this from r-base-core; TODO: Review these packages
+sudo apt -y install libjpeg62                  # Required for RStudio
+sudo apt -y install libssl-dev                 # Required for the httr and openssl packages
+sudo apt -y install libcurl4-openssl-dev       # Required for the RCurl package
+sudo apt -y install libxml2-dev                # Required for the XML package
+sudo apt -y install libcairo2 libcairo2-dev    # Required for the Cairo package
 
 wget https://download1.rstudio.org/rstudio-xenial-1.1.423-amd64.deb
 sudo dpkg -i rstudio-xenial-1.1.423-amd64.deb
