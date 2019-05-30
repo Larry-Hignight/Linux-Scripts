@@ -42,15 +42,11 @@ sudo apt -y install sound-juicer   # Music ripping from CDROM
 sudo apt -y install cdparanoia     # Music ripping from CDROM
 
 
-echo "###########################"
-echo "## Multimedia Restricted ##"
-echo "###########################"
-sudo apt install ubuntu-restricted-extras
-sudo /usr/share/doc/libdvdread4/install-css.sh
-
-## These packages may not be necessary with the newer restricted-extras package
-#sudo apt -y install w32codecs
-#sudo apt -y install libdvdread4
+echo "#######################"
+echo "## DVD CSS Libraries ##"
+echo "#######################"
+sudo apt-get install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
 
 
 echo "################################"
