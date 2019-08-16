@@ -176,6 +176,7 @@ sudo apt -y install hardinfo
 sudo apt -y install cpuid
 sudo apt -y install inxi
 sudo apt -y install htop
+sudo apt -y install macchanger
 sudo apt -y install pmount             # A handy tool for mounting hardware (eg thumb drives)
 sudo apt -y install wavemon            # A cool ncurses based wifi monitor
 # sudo apt -y install iotop            # Requires a sudoer to run it with root level access
