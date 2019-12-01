@@ -49,6 +49,16 @@ sudo apt-get install libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 
 
+echo "####################"
+echo "## Bluray Support ##"
+echo "####################"
+sudo apt install libbluray2
+sudo apt install libbluray-bdj libbluray-bin libbluray-dev libbluray-doc
+sudo apt install libaacs0
+mkdir ~/.config/aacs && cd ~/.config/aacs
+wget http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg
+
+
 echo "################################"
 echo "## Setup a working Python Env ##"
 echo "################################"
