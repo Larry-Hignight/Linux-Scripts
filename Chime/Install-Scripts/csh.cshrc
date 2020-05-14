@@ -108,3 +108,33 @@ alias ocr             "python3 /usr/local/Chime-OCR/ocr.py"
 #alias safe-rm        "python /usr/local/bin/rm.py"
 #alias type           "more"
 #alias weather        "sh /usr/local/bin/weather.sh"
+
+
+## Uncategorized aliases -------------------------------------------------------------------------------------
+
+alias all-terms       "python3 /usr/local/bin/all-terms"
+alias iplayer         "/usr/local/bin/iget.py"
+#alias i24             "/home/chime/virtual-python/bin/python /home/chime/virtual-python/i24newsStreamer.py"
+alias rs              "/usr/bin/sudo cp /usr/local/bin/characters /sys/accessibility/speakup/i18n/"
+alias iir             "/home/chime/virtual-python/bin/python3 /home/chime/virtual-python/trial.py"
+alias bbc            "/home/chime/getiplayer/getiplayer.py"
+alias rmpv           "docker run -it --rm --privileged -v /dev/dsp:/dev/dsp -v /:/sound audio2:latest /playLink.py"
+alias ffm            "/usr/local/bin/ffm-executable /home/chime/lynx_bookmarks.html"
+alias vlc-edit       "/home/chime/vlcMediaEditor/player2.py"
+#alias vlc-edit2      "/home/chime/vlcMediaEditor/player2.py"
+alias trizen    "youtube-viewer --player=ytdl"
+alias mic       "arecord -f S16_LE -c 2 -r 44100 --device='hw:1,0' -t raw | lame -r - "
+alias pod            "/home/chime/podcatcher/mainMenu.py"
+#alias pod             "/home/chime/podcatcher/mainMenu.py"
+#alias pod            "docker run -it -e LC_ALL=en_US.utf-8 -e LANG=en_US.utf-8 -v /home/chime/podcatcher:/podcatcher -v /:/download podcatcher /podcatcher/m\
+ainMenu.py"
+
+alias dayseq "python3 /home/larry/DaySequerra/dayseq.py"
+
+alias stocks22 "docker start -i stock-info-22"
+alias stocks23 "docker start -i stock-info-23"
+alias stocks24 "docker start -i stock-info-24"
+
+alias df-chime "df -h / /bell"
+alias df-bell  "ssh chime@192.168.0.2 df -h / /var/media"
+alias ssh-bell  "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i bell.pem chime@192.168.0.2"
