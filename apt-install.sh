@@ -181,6 +181,15 @@ echo "#######################################################"
 echo "## Hardware Info / OS Info                           ##"
 echo "## http://www.binarytides.com/linux-cpu-information  ##"
 echo "#######################################################"
+sudo apt -y install testdisk           # CLI file/disk recovery tool  https://www.linuxtechi.com/how-to-recover-deleted-files-in-linux/
+sudo apt -y install coreutils          # The shred utility, which is part of coreutils, makes recovery of deleted file nearly impossible
+                                       # Example usage: https://www.computerhope.com/unix/shred.htm
+
+
+echo "#######################################################"
+echo "## Hardware Info / OS Info                           ##"
+echo "## http://www.binarytides.com/linux-cpu-information  ##"
+echo "#######################################################"
 sudo apt -y install conky
 sudo apt -y install hardinfo
 sudo apt -y install cpuid
