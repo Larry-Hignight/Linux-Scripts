@@ -21,6 +21,7 @@ echo "#######################"
 echo "## Multimedia - Main ##"
 echo "#######################"
 sudo apt -y install ffmpeg         # Audio and video encoder
+sudo apt -y install svt-av1        # SVT AV1 codec tools
 sudo apt -y install vlc            # Media player
 sudo apt -y install mpv            # CLI video player
 sudo apt -y install openshot       # Non-Linear video editor
